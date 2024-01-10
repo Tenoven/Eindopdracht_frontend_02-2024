@@ -1,0 +1,25 @@
+p {
+    padding-left: 12px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #260414;
+    width: 100vw;
+    height: 5vh;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 5vh;
+    padding-right: 12px;
+}
+
+.loginButtons {
+    display: flex;
+    gap: 16px;
+}

@@ -1,0 +1,59 @@
+main {
+    ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 85vh;
+    width: 60vw;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+h2 {
+    text-underline: white;
+    font-size: 35px;
+}
+
+ul {
+    padding-left: 35px;
+
+}
+
+section {
+    font-size: 24px;
+}
+
+.sectionCards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    background-color: #35061B;
+    align-content: center;
+    text-align: center;
+    padding: 10px;
+    width: 25vw;
+    height: 60vh;
+}
+
+/*.background {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    background-image: url("../../assets/dragon-flipped.png");*/
+/*    background-size: auto;*/
+/*    background-position: left;*/
+/*    background-repeat: no-repeat;*/
+/*}*/
+
+/*body {*/
+/*    background-image: url("../../assets/dragon.png") ;*/
+/*    background-size: auto;*/
+/*    background-position: right;*/
+/*    background-repeat: no-repeat;*/
+/*}*/
+

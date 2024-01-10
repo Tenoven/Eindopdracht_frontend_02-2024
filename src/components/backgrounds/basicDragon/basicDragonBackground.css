@@ -1,0 +1,14 @@
+body {
+    background-color: #4C0827;
+
+    width: 100vw;
+}
+
+.background {
+    display: flex;
+    align-items: center;
+}
+
+.image {
+width: 20vw;
+}
