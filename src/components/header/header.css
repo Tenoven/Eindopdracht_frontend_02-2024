@@ -1,7 +1,3 @@
-p {
-    padding-left: 12px;
-}
-
 header {
     display: flex;
     justify-content: space-between;
@@ -17,9 +13,23 @@ nav {
     align-items: center;
     height: 5vh;
     padding-right: 12px;
+    gap: 12px;
 }
 
 .loginButtons {
     display: flex;
     gap: 16px;
+}
+
+.active-menu-link{
+    border-bottom: 2px solid #E6AF2E ;
+    color: #E6AF2E;
+    text-decoration: none;
+}
+
+.default-menu-link{
+    border-bottom: 2px solid transparent ;
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
 }

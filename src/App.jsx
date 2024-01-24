@@ -9,6 +9,7 @@ import LoginPage from "./pages/loginPage/loginPage.jsx";
 import RegisterPage from "./pages/registerPage/registerPage.jsx";
 import CharacterCreator from "./pages/characterCreator/characterCreator.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
+import EncyclopediaPage from "./pages/encyclopediaPage/encyclopediaPage.jsx";
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
         <Route path="*" element={<ErrorPage/>} />
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/register" element={<RegisterPage/>} />
-        <Route path="/encyclopedia" element={<CharacterCreator/>} />
-        {/*<Route path="/" element={} />*/}
+        <Route path="/encyclopedia" element={<EncyclopediaPage/>} />
+        <Route path="/charactercreator" element={<CharacterCreator/>} />
         {/*<Route path="/" element={} />*/}
         {/*<Route path="/" element={} />*/}
         {/*<Route path="/" element={} />*/}
