@@ -1,20 +1,14 @@
-import React from 'react';
-import Header from "../../components/header/header.jsx";
 import SearchBar from "../../components/SearchBar/searchBar.jsx";
-import Footer from "../../components/footer/footer.jsx";
 import "./homePage.css"
-import dragon from "../../assets/dragon.png"
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 
-function Homepage(props) {
+function HomePage() {
     return (
         <>
-            <Header></Header>
             <SearchBar></SearchBar>
             <BasicDragonBackground>
                 <main>
-                    <h1>Dungeons & Dragons
-                        <br/>
+                    <h1>Dungeons & Dragons <br/>
                         5E Centre </h1>
                     <div className={"sectionCards"}>
                         <section className={"card"}>
@@ -43,9 +37,8 @@ function Homepage(props) {
                     </div>
                 </main>
             </BasicDragonBackground>
-            <Footer></Footer>
         </>
     );
 }
 
-export default Homepage;
+export default HomePage;

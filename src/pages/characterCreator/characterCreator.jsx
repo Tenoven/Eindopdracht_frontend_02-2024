@@ -2,7 +2,9 @@ import React from 'react';
 
 function CharacterCreator(props) {
     return (
-        <div></div>
+        <>
+            <p>creator</p>
+        </>
     );
 }
 
