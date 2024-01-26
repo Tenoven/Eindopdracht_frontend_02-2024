@@ -33,3 +33,20 @@ nav {
     color: white;
     font-size: 1em;
 }
+
+.loginButtons .active-menu-link{
+    border: 2px solid white ;
+    background: #E6AF2E;
+    text-decoration: underline;
+    padding: 4px 16px;
+    color: white;
+}
+
+.loginButtons .default-menu-link{
+    border: 2px solid white ;
+    background: #E6AF2E;
+    text-decoration: none;
+    padding: 4px 16px;
+    color: white;
+    font-size: 1em;
+}

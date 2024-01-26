@@ -1,6 +1,7 @@
 import SearchBar from "../../components/SearchBar/searchBar.jsx";
 import "./homePage.css"
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
+import {statCalculator} from "../../Helpers/stat-roller/statDiceRoller.js";
 
 function HomePage() {
     return (

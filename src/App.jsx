@@ -10,6 +10,7 @@ import RegisterPage from "./pages/registerPage/registerPage.jsx";
 import CharacterCreator from "./pages/characterCreator/characterCreator.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
 import EncyclopediaPage from "./pages/encyclopediaPage/encyclopediaPage.jsx";
+import {statCalculator} from "./Helpers/stat-roller/statDiceRoller.js";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         {/*<Route path="/" element={} />*/}
       </Routes>
       <Footer></Footer>
+
     </>
   )
 }
