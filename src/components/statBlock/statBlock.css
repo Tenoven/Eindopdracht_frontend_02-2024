@@ -1,0 +1,20 @@
+.statCard {
+    width: 5vw;
+    height: 20vh;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #E6AF2E;
+}
+
+
+.underside > input {
+    background-color: white;
+    color: black;
+    border: none;
+    width: 5vw;
+    height: 6vh;
+}

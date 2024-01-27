@@ -1,5 +1,4 @@
 main {
-    ;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,20 +39,3 @@ section {
     width: 25vw;
     height: 60vh;
 }
-
-/*.background {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    background-image: url("../../assets/dragon-flipped.png");*/
-/*    background-size: auto;*/
-/*    background-position: left;*/
-/*    background-repeat: no-repeat;*/
-/*}*/
-
-/*body {*/
-/*    background-image: url("../../assets/dragon.png") ;*/
-/*    background-size: auto;*/
-/*    background-position: right;*/
-/*    background-repeat: no-repeat;*/
-/*}*/
-
