@@ -2,14 +2,15 @@
     display: flex;
     flex-direction: column;
     background-color: #35061B;
-    width: 17vw;
+    width: 15vw;
     align-content: center;
     align-items: center;
-    height: 25vh;
+    height: 23vh;
 }
 
 h2 {
     align-content: center;
+    font-size: xx-large;
     color: white;
 }
 
