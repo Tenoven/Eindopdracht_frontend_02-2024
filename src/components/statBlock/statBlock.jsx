@@ -1,12 +1,11 @@
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./statBlock.css"
+import {statCalculator} from "../../Helpers/stat-roller/statDiceRoller.js";
 
 function StatBlock(props) {
 
-    const [statComponent, setStatComponent] = useState("")
-    // const [statInput, setStatInput] = useState("")
-
-
+    const [statComponent, setStatComponent] = useState(null)
+    const [generateStatButton, setGenerateStatButton] = useState(null)
 
 
     useEffect(() => {
@@ -39,7 +38,7 @@ function StatBlock(props) {
                     </div>);
                 break;
         }
-    }, [props.generation]);
+    }, [props.generation, props.value]);
 
 
     return (
@@ -47,6 +46,7 @@ function StatBlock(props) {
             <div className="statCard">
                 <h3 className="title">{props.stat}</h3>
                 {statComponent}
+                {generateStatButton}
             </div>
         </>
     );

@@ -1,0 +1,14 @@
+main {
+
+}
+
+.encyclopediaBody {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 60vw;
+    height: 85vh;
+    align-content: center;
+    justify-content: center;
+}

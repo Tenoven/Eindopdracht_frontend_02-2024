@@ -4,7 +4,7 @@ import "./mainButton.css"
 function MainButton(props) {
     return (
         <>
-            <button type="button" onClick={props.onClick} className="mainButton"> {props.buttonName} </button>
+            <button onClick={props.onClick} className="mainButton"> {props.buttonName} </button>
         </>
     );
 }

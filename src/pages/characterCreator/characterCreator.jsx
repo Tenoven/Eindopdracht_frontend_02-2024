@@ -1,9 +1,15 @@
-import {useState} from 'react';
+//////// imports: ////////
+import React, {useState} from 'react';
 import "./characterCreator.css"
 import StatBlock from "../../components/statBlock/statBlock.jsx";
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
+import {statCalculator} from "../../Helpers/stat-roller/statDiceRoller.js";
+import MainButton from "../../components/buttons/mainButton/mainButton.jsx";
 
+//////// main function: ////////
 function CharacterCreator() {
+
+    //////// use states: ////////
     const [chosenStatType, setChosenStatType] = useState("")
     const [formState, setFormstate] =useState({
         STR: "",
@@ -14,6 +20,20 @@ function CharacterCreator() {
         CHA: "",
     })
 
+    let statArray = []
+
+
+    //////// functions: ////////
+    const generateStats = () => {
+        // Use a for loop to generate stats and push them into the statArray
+        statArray= []
+        for (let i = 0; i < 6; i++) {
+            statArray.push(statCalculator());
+        }
+
+        console.log(statArray)
+    };
+
     const handleOptionChange = (event) => {
         setChosenStatType(event.target.value);
     };
@@ -21,12 +41,13 @@ function CharacterCreator() {
     function handleChange(event){
         const changedFieldName = event.target.name
 
-        setFormstate({
+        setFormstate( formState => ({
             ...formState,
             [changedFieldName]: event.target.value,
-        })
+        }))
     }
 
+    //////// return: ////////
     return (
         <>
             <BasicDragonBackground>
@@ -64,6 +85,9 @@ function CharacterCreator() {
                                 <StatBlock generation={chosenStatType} stat="INT" onChange={handleChange} value={formState.INT}></StatBlock>
                                 <StatBlock generation={chosenStatType} stat="CHA" onChange={handleChange} value={formState.CHA}></StatBlock>
                             </form>
+                                {chosenStatType === "manualDigi" && (
+                                    <MainButton onClick={generateStats} buttonName="Generate stats"></MainButton>
+                                )}
                         </section>
                     </article>
                     <button type="button" onClick={() => console.log(formState)}>test</button>
