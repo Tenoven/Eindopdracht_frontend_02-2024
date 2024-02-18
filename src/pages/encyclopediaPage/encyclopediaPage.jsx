@@ -14,7 +14,6 @@ import BasicDragonBackground from "../../components/backgrounds/basicDragon/basi
 function EncyclopediaPage(props) {
     return (
         <>
-            <SearchBar></SearchBar>
             <BasicDragonBackground>
                 <main>
                     <h1>Encyclopedia</h1>

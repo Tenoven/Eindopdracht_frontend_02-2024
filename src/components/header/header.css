@@ -50,3 +50,7 @@ nav {
     color: white;
     font-size: 1em;
 }
+
+p {
+    margin-left: 12px;
+}

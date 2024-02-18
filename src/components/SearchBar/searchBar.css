@@ -1,10 +1,12 @@
+
 .searchbar {
     height: 5vh;
-    width: 100vw;
     background-color: #35061B;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    width: 100vw;
+    position: absolute;
 }
 
 .searchForm {

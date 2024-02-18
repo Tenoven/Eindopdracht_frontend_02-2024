@@ -11,24 +11,34 @@ import CharacterCreator from "./pages/characterCreator/characterCreator.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
 import EncyclopediaPage from "./pages/encyclopediaPage/encyclopediaPage.jsx";
 import {statCalculator} from "./Helpers/stat-roller/statDiceRoller.js";
+import SearchBar from "./components/SearchBar/searchBar.jsx";
 
 function App() {
   return (
     <>
-      <Header></Header>
-      <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="*" element={<ErrorPage/>} />
-        <Route path="/login" element={<LoginPage/>} />
-        <Route path="/register" element={<RegisterPage/>} />
-        <Route path="/encyclopedia" element={<EncyclopediaPage/>} />
-        <Route path="/charactercreator" element={<CharacterCreator/>} />
-        {/*<Route path="/" element={} />*/}
-        {/*<Route path="/" element={} />*/}
-        {/*<Route path="/" element={} />*/}
-        {/*<Route path="/" element={} />*/}
-      </Routes>
-      <Footer></Footer>
+        <Header></Header>
+        <SearchBar></SearchBar>
+          <Routes>
+            <Route path="/" element={<HomePage/>} />
+            <Route path="*" element={<ErrorPage/>} />
+            <Route path="/login" element={<LoginPage/>} />
+            <Route path="/register" element={<RegisterPage/>} />
+            <Route path="/encyclopedia" element={<EncyclopediaPage/>} />
+              <Route path="/encyclopedia/races" element={} />
+              <Route path="/encyclopedia/classes" element={} />
+              <Route path="/encyclopedia/backgrounds" element={} />
+              <Route path="/encyclopedia/feats" element={} />
+              <Route path="/encyclopedia/items" element={} />
+              <Route path="/encyclopedia/spells" element={} />
+              <Route path="/encyclopedia/monsters" element={} />
+            <Route path="/charactercreator" element={<CharacterCreator/>} />
+            {/*<Route path="/" element={} />*/}
+            {/*<Route path="/" element={} />*/}
+            {/*<Route path="/" element={} />*/}
+            {/*<Route path="/" element={} />*/}
+            {/*<Route path="/" element={} />*/}
+          </Routes>
+          <Footer></Footer>
 
     </>
   )
