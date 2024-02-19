@@ -2,7 +2,9 @@ import React from 'react';
 
 function BackgroundPage(props) {
     return (
-        <div></div>
+        <main>
+        <p>background</p>
+        </main>
     );
 }
 

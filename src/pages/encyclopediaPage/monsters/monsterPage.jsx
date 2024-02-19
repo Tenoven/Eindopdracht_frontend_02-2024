@@ -1,8 +1,29 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import axios from "axios";
+import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 
 function MonsterPage(props) {
+    let apiData = {}
+
+    useEffect(() => {
+        async function apiGetInfo() {
+            try {
+                const response = await axios.get("https://api.open5e.com/v1/monsters/?format=json");
+                console.log(response)
+                apiData = response
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        void apiGetInfo()
+    }, [])
+
     return (
-        <div></div>
+        <BasicDragonBackground>
+        <main>
+            <p>monsterpage</p>
+        </main>
+        </BasicDragonBackground>
     );
 }
 
