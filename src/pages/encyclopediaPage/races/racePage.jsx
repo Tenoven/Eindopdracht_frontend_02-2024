@@ -1,16 +1,16 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 
-function RacePage(props) {
+function RacePage() {
     let apiData = {}
 
     useEffect(() => {
         async function apiGetInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/races/?format=json");
-                console.log(response)
-                apiData = response
+                console.log(response.data.results)
+                apiData = response.data.results
             } catch (error) {
                 console.error('Error:', error);
             }
@@ -20,9 +20,9 @@ function RacePage(props) {
 
     return (
         <BasicDragonBackground>
-        <main>
-            <p>racepage</p>
-        </main>
+            <main>
+                <p>racepage</p>
+            </main>
         </BasicDragonBackground>
     );
 }

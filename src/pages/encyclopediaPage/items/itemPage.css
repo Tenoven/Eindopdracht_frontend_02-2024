@@ -1,4 +1,16 @@
-body {
-    height: 90vw;
+main {
+    display: flex;
+    height: 90vh;
     width: 60vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.tileBase {
+    display: flex;
+    gap: 24px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    margin-top: 30px;
 }

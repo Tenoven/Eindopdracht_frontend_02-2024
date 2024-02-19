@@ -1,17 +1,17 @@
 import {useEffect} from 'react';
 import axios from "axios";
-import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
+import BasicDragonBackground from "../../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import "./MagicItemPage.css"
 
-function MagicItemPage(props) {
+function MagicItemPage() {
     let apiData = {}
 
     useEffect(() => {
         async function apiGetInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/magicitems/?format=json");
-                console.log(response)
-                apiData = response
+                console.log(response.data)
+                apiData = response.data
             } catch (error) {
                 console.error('Error:', error);
             }

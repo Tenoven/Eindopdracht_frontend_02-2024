@@ -18,6 +18,10 @@ import FeatsPage from "./pages/encyclopediaPage/feats/FeatsPage.jsx";
 import ItemPage from "./pages/encyclopediaPage/items/itemPage.jsx";
 import MonsterPage from "./pages/encyclopediaPage/monsters/monsterPage.jsx";
 import SpellPage from "./pages/encyclopediaPage/spells/spellPage.jsx";
+import WeaponPage from "./pages/encyclopediaPage/items/WeaponPage/WeaponPage.jsx";
+import ArmorPage from "./pages/encyclopediaPage/items/armor/ArmorPage.jsx";
+import MagicItemPage from "./pages/encyclopediaPage/items/MagicitemsPage/MagicItemPage.jsx";
+import RacePage from "./pages/encyclopediaPage/races/racePage.jsx";
 
 function App() {
   return (
@@ -34,14 +38,16 @@ function App() {
             <Route path="/register" element={<RegisterPage/>} />
 
             <Route path="/encyclopedia" element={<EncyclopediaPage/>} />
-              <Route path="/encyclopedia/races" element={<BackgroundPage/>} />
+              <Route path="/encyclopedia/races" element={<RacePage/>} />
               <Route path="/encyclopedia/classes" element={<ClassesPage/>} />
-              <Route path="/encyclopedia/backgrounds" element={<FeatsPage/>} />
+              <Route path="/encyclopedia/backgrounds" element={<BackgroundPage/>} />
               <Route path="/encyclopedia/feats" element={<FeatsPage/>} />
+
               <Route path="/encyclopedia/items" element={<ItemPage/>} />
-                <Route path="/encyclopedia/items/weapons" element={} />
-                <Route path="/encyclopedia/items/armor" element={} />
-                <Route path="/encyclopedia/items/magicitems" element={} />
+                <Route path="/encyclopedia/items/weapons" element={<WeaponPage/>} />
+                <Route path="/encyclopedia/items/armor" element={<ArmorPage/>} />
+                <Route path="/encyclopedia/items/magicitems" element={<MagicItemPage/>} />
+
               <Route path="/encyclopedia/spells" element={<SpellPage/>} />
               <Route path="/encyclopedia/monsters" element={<MonsterPage/>} />
 

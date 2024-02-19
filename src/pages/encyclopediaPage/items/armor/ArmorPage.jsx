@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import axios from "axios";
-import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
+import BasicDragonBackground from "../../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import "./ArmorPage.css"
 
 function ArmorPage() {
@@ -10,8 +10,8 @@ function ArmorPage() {
         async function apiGetInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/armor/?format=json");
-                console.log(response)
-                apiData = response
+                console.log(response.data.results)
+                apiData = response.data.results
             } catch (error) {
                 console.error('Error:', error);
             }
