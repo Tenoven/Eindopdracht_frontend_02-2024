@@ -51,7 +51,7 @@ function CharacterCreator() {
     return (
         <>
             <BasicDragonBackground>
-                <main>
+                <main className="creatorBody">
                     <h1>Character creator</h1>
                     <article className="statBox">
                         <h2 className="boxTitle">Choose your stat generator:</h2>

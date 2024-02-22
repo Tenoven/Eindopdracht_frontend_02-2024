@@ -20,13 +20,13 @@ function SpellPage() {
 
     return (
         <BasicDragonBackground>
-        <main>
-            <p>spells page</p>
-            <button type="button" onClick={() => {
-                console.log(apiData)}}>
-                test
-            </button>
-        </main>
+            <main>
+                <p>spells page</p>
+                <button type="button" onClick={() => {
+                    console.log(apiData)}}>
+                    test
+                </button>
+            </main>
         </BasicDragonBackground>
     );
 }

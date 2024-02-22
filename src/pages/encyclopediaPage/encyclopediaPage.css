@@ -1,5 +1,6 @@
-main {
-    height: 95vh;
+.encyclopediaBox {
+    min-height: 85vh;
+    width: 60vw;
 }
 
 .encyclopediaBody {
@@ -7,12 +8,9 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    width: 60vw;
     align-content: center;
     justify-content: center;
+    padding-bottom: 10px ;
 }
 
-h1 {
-    margin-bottom: -12px;
-    margin-top: 12px;
-}
+

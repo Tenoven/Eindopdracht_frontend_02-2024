@@ -1,8 +1,8 @@
-main {
+.homepageBody {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 85vh;
+    min-height: 85vh;
     width: 60vw;
 }
 
@@ -35,6 +35,7 @@ section {
 .sectionCards {
     display: flex;
     justify-content: space-around;
+    gap: 24px;
 }
 
 .card {

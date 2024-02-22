@@ -1,29 +1,41 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
+import "./ClassesPage.css"
+import ClassComponent from "../../../components/classComponents/ClassComponent.jsx";
+// import ClassComponent from "../../../components/classComponents/ClassComponent.jsx";
 
 function ClassesPage() {
 
-    let apiData = {}
+    const [apiData, setApiData] = useState([]);
+
 
     useEffect(() => {
         async function apiGetInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/classes/?format=json");
                 console.log(response.data.results)
-                apiData = response.data.results
+                setApiData(response.data.results)
             } catch (error) {
-                console.error('Error:', error);
-            }
+                console.error('Error:', error);}
         }
         void apiGetInfo()
     }, [])
 
     return (
         <BasicDragonBackground>
-        <main>
-            <p>Classespage</p>
-        </main>
+            <main >
+                <h1>Classes</h1>
+                <div className="classes-container">
+                    {apiData.length > 0 ? (
+                        apiData.map((dat, index) => (
+                                <ClassComponent key={index} name={dat.name} description={dat.desc}/>
+                        ))
+                    ) : (
+                        <p>Loading...</p>
+                    )}
+                </div>
+            </main>
         </BasicDragonBackground>
     );
 }

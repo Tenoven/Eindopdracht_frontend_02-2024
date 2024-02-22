@@ -21,9 +21,9 @@ function FeatsPage() {
 
     return (
         <BasicDragonBackground>
-        <main>
-        <p>featspage</p>
-        </main>
+            <main>
+                <p>featspage</p>
+            </main>
         </BasicDragonBackground>
     );
 }

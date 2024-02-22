@@ -1,14 +1,11 @@
-body {
-    background-color: #4C0827;
-
-    width: 100vw;
-}
-
 .background {
+    background-color: #4C0827;
+    /*width: 99vw;*/
     display: flex;
     align-items: center;
 }
 
 .image {
-width: 20vw;
+    width: 20vw;
+    position: sticky;
 }

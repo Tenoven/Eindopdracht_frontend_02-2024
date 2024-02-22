@@ -8,11 +8,11 @@ function BasicDragonBackground(props) {
     return (
         <div className={"background"}>
             <div className={"image"}>
-            <img src={flippedDragon} alt="Background image of a dragon"/>
+                <img src={flippedDragon} alt="image of a dragon"/>
             </div>
             {props.children}
             <div className={"image"}>
-            <img src={dragon} alt="Background image of a dragon"/>
+                <img src={dragon} alt="image of a dragon"/>
             </div>
         </div>
     );

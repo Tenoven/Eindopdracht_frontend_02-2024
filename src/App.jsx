@@ -28,34 +28,36 @@ function App() {
     <>
         <Header></Header>
         <SearchBar></SearchBar>
-          <Routes>
-            <Route path="/" element={<HomePage/>} />
+        <div className="appBody">
+            <Routes>
+              <Route path="/" element={<HomePage/>} />
 
-            <Route path="*" element={<ErrorPage/>} />
+              <Route path="*" element={<ErrorPage/>} />
 
-            <Route path="/login" element={<LoginPage/>} />
+              <Route path="/login" element={<LoginPage/>} />
 
-            <Route path="/register" element={<RegisterPage/>} />
+              <Route path="/register" element={<RegisterPage/>} />
 
-            <Route path="/encyclopedia" element={<EncyclopediaPage/>} />
-              <Route path="/encyclopedia/races" element={<RacePage/>} />
-              <Route path="/encyclopedia/classes" element={<ClassesPage/>} />
-              <Route path="/encyclopedia/backgrounds" element={<BackgroundPage/>} />
-              <Route path="/encyclopedia/feats" element={<FeatsPage/>} />
+              <Route path="/encyclopedia" element={<EncyclopediaPage/>} />
+                <Route path="/encyclopedia/races" element={<RacePage/>} />
+                <Route path="/encyclopedia/classes" element={<ClassesPage/>} />
+                <Route path="/encyclopedia/backgrounds" element={<BackgroundPage/>} />
+                <Route path="/encyclopedia/feats" element={<FeatsPage/>} />
 
-              <Route path="/encyclopedia/items" element={<ItemPage/>} />
-                <Route path="/encyclopedia/items/weapons" element={<WeaponPage/>} />
-                <Route path="/encyclopedia/items/armor" element={<ArmorPage/>} />
-                <Route path="/encyclopedia/items/magicitems" element={<MagicItemPage/>} />
+                <Route path="/encyclopedia/items" element={<ItemPage/>} />
+                  <Route path="/encyclopedia/items/weapons" element={<WeaponPage/>} />
+                  <Route path="/encyclopedia/items/armor" element={<ArmorPage/>} />
+                  <Route path="/encyclopedia/items/magicitems" element={<MagicItemPage/>} />
 
-              <Route path="/encyclopedia/spells" element={<SpellPage/>} />
-              <Route path="/encyclopedia/monsters" element={<MonsterPage/>} />
+                <Route path="/encyclopedia/spells" element={<SpellPage/>} />
+                <Route path="/encyclopedia/monsters" element={<MonsterPage/>} />
 
-            <Route path="/charactercreator" element={<CharacterCreator/>} />
+              <Route path="/charactercreator" element={<CharacterCreator/>} />
 
-            {/*<Route path="/" element={} />*/}
-            {/*<Route path="/" element={} />*/}
-          </Routes>
+              {/*<Route path="/" element={} />*/}
+              {/*<Route path="/" element={} />*/}
+            </Routes>
+        </div>
           <Footer></Footer>
 
     </>

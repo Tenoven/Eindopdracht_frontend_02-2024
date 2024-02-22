@@ -21,9 +21,9 @@ function BackgroundPage() {
 
     return (
         <BasicDragonBackground>
-        <main>
-        <p>background</p>
-        </main>
+            <main>
+                <p>background</p>
+            </main>
         </BasicDragonBackground>
     );
 }

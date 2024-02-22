@@ -7,7 +7,7 @@ function ItemPage() {
     return (
         <>
             <BasicDragonBackground>
-                <main>
+                <main className="mainPage">
                     <h1>Item</h1>
                     <p>Choose the type of item you want to find information about:</p>
                     <article className="tileBase">

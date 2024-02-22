@@ -1,0 +1,8 @@
+.boxes {
+    display: flex;
+    flex-direction: column;
+    min-width: 16vw;
+    min-height: 15vh;
+    align-items: center;
+    gap: 12px;
+}

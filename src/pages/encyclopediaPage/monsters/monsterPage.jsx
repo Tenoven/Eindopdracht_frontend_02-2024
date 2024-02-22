@@ -20,9 +20,9 @@ function MonsterPage() {
 
     return (
         <BasicDragonBackground>
-        <main>
-            <p>monsterpage</p>
-        </main>
+            <main>
+                <p>monsterpage</p>
+            </main>
         </BasicDragonBackground>
     );
 }

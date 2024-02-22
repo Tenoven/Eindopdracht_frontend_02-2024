@@ -1,4 +1,9 @@
-body {
-    height: 90vw;
-    width: 60vw;
+.classes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    min-height: 85vh;
+    /*width: 60vw;*/
+    margin-bottom: 24px;
 }

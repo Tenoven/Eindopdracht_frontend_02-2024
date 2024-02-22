@@ -8,7 +8,7 @@ function HomePage() {
     return (
         <>
             <BasicDragonBackground>
-                <main>
+                <main className="homepageBody">
                     <h1>Dungeons & Dragons <br/>
                         5E Centre </h1>
                     <div className={"sectionCards"}>

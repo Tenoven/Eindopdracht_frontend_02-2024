@@ -1,6 +1,7 @@
-main {
+.mainPage {
     display: flex;
-    height: 90vh;
+    flex-direction: column;
+    min-height: 85vh;
     width: 60vw;
     justify-content: center;
     align-items: center;

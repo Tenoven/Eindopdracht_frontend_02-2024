@@ -20,7 +20,7 @@ function RacePage() {
 
     return (
         <BasicDragonBackground>
-            <main>
+            <main >
                 <p>racepage</p>
             </main>
         </BasicDragonBackground>

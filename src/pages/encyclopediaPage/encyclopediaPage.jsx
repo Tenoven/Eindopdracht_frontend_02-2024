@@ -9,11 +9,11 @@ import spellsimg from "../../assets/spells.png"
 import monsterimg from "../../assets/monsters.png"
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 
-function EncyclopediaPage(props) {
+function EncyclopediaPage() {
     return (
         <>
             <BasicDragonBackground>
-                <main>
+                <main className="encyclopediaBox">
                     <h1>Encyclopedia</h1>
                     <article className="encyclopediaBody">
                         <EncyclopediaTile title="Races" image={raceimg} imageAlt="image of people in a circle" linkPage="/encyclopedia/races"/>
@@ -22,7 +22,7 @@ function EncyclopediaPage(props) {
                         <EncyclopediaTile title="Feats" image={featsimg} imageAlt="image of a diamond" linkPage="/encyclopedia/feats" />
                         <EncyclopediaTile title="Items" image={itemimg} imageAlt="image of a mushroom and a twig" linkPage="/encyclopedia/items" />
                         <EncyclopediaTile title="Spells" image={spellsimg} imageAlt="image of a spellbook" linkPage="/encyclopedia/spells" />
-                        <EncyclopediaTile title="Monsters" image={monsterimg} imageAlt="image of a monster with multiple eyes" linkPage="/encyclopedia/monsters" />
+                        <EncyclopediaTile cl title="Monsters" image={monsterimg} imageAlt="image of a monster with multiple eyes" linkPage="/encyclopedia/monsters" />
                     </article>
                 </main>
             </BasicDragonBackground>
