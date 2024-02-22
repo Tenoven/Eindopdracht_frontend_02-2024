@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     min-height: 85vh;
-    width: 60vw;
+    min-width: 60vw;
 }
 
 p {

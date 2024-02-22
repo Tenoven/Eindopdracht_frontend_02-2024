@@ -7,11 +7,11 @@ import "../basicDragon/basicDragonBackground.css"
 function BasicDragonBackground(props) {
     return (
         <div className={"background"}>
-            <div className={"image"}>
+            <div className={"imageLeft"}>
                 <img src={flippedDragon} alt="image of a dragon"/>
             </div>
             {props.children}
-            <div className={"image"}>
+            <div className={"imageRight"}>
                 <img src={dragon} alt="image of a dragon"/>
             </div>
         </div>

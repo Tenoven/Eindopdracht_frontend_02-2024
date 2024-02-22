@@ -1,8 +1,4 @@
-import React from 'react';
 import "./header.css"
-import NavButton from "../buttons/navButton/navButton.jsx";
-import MainButton from "../buttons/mainButton/mainButton.jsx";
-import loginPage from "../../pages/loginPage/loginPage.jsx";
 import {NavLink} from "react-router-dom";
 
 function Header() {

@@ -1,11 +1,19 @@
 .background {
     background-color: #4C0827;
-    /*width: 99vw;*/
+    max-width: 100vw;
+    min-height: 85vh;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
-.image {
-    width: 20vw;
-    position: sticky;
+.imageLeft {
+    max-width: 20vw;
+    align-self: center;
+}
+
+.imageRight {
+    max-width: 20vw;
+    align-self: center;
 }

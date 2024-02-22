@@ -4,6 +4,6 @@
     justify-content: center;
     gap: 40px;
     min-height: 85vh;
-    /*width: 60vw;*/
+    max-width: 60vw;
     margin-bottom: 24px;
 }

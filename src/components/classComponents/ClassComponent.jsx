@@ -1,29 +1,25 @@
-import "./ClassComponent.css"
-import MainButton from "../buttons/mainButton/mainButton.jsx";
-import {useState} from "react";
-function ClassComponent(props) {
+import "./ClassComponent.css";
+import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 
-    const [showMore, setShowMore] = useState(false)
+function ClassComponent(props) {
+    const [showMore, setShowMore] = useState(false);
 
     return (
-        <>
         <div className="classCard">
             <fieldset className="boxes">
                 <h2>{props.name}</h2>
                 {showMore ? (
                     <>
                         <h3>Description:</h3>
-                        <p>{props.description}</p>
-                        <MainButton buttonName="Show less" onClick={() => {setShowMore(false)}}/>
+                        <ReactMarkdown className="descriptionSection">{props.description}</ReactMarkdown>
+                        <button onClick={() => setShowMore(false)}>Show less</button>
                     </>
                 ) : (
-
-                    <MainButton buttonName="Show more" onClick={() => {setShowMore(true)}} />
+                    <button onClick={() => setShowMore(true)}>Show more</button>
                 )}
-
             </fieldset>
         </div>
-        </>
     );
 }
 

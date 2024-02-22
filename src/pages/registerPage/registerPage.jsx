@@ -1,9 +1,12 @@
-import React from 'react';
+import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
+import "./registerPage.css"
 
 function RegisterPage(props) {
     return (
         <>
-        <p>Register</p>
+            <BasicDragonBackground>
+                <p>Register</p>
+            </BasicDragonBackground>
         </>
     );
 }
