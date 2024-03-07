@@ -1,17 +1,19 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
+import BackgroundComponent from "../../../components/backgroundComponent/backgroundComponent.jsx";
+import "./BackgroundPage.css"
 
 function BackgroundPage() {
 
-    let apiData = {}
+    const [apiData, setApiData] = useState([]);
 
     useEffect(() => {
         async function apiGetInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/backgrounds/?format=json");
                 console.log(response.data.results)
-                apiData = response.data.results
+                setApiData (response.data.results)
             } catch (error) {
                 console.error('Error:', error);
             }
@@ -21,8 +23,18 @@ function BackgroundPage() {
 
     return (
         <BasicDragonBackground>
-            <main>
-                <p>background</p>
+            <main >
+                <h1>Backgrounds</h1>
+                <div className="background-container">
+                    {/*{console.log("apidata in return", apiData)}*/}
+                    {apiData.length > 0 ? (
+                        apiData.map((dat, index) => (
+                            <BackgroundComponent key={index} data={dat}/>
+                        ))
+                    ) : (
+                        <p>Loading...</p>
+                    )}
+                </div>
             </main>
         </BasicDragonBackground>
     );
