@@ -3,7 +3,6 @@ import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import "./ClassesPage.css"
 import ClassComponent from "../../../components/classComponents/ClassComponent.jsx";
-// import ClassComponent from "../../../components/classComponents/ClassComponent.jsx";
 
 function ClassesPage() {
 
