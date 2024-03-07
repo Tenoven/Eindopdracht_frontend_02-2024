@@ -1,0 +1,9 @@
+.race-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    min-height: 85vh;
+    max-width: 60vw;
+    margin-bottom: 24px;
+}

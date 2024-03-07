@@ -14,7 +14,7 @@ function ClassesPage() {
         async function apiGetInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/classes/?format=json");
-                console.log(response.data.results)
+                console.log("apiData in fetch",response.data.results)
                 setApiData(response.data.results)
             } catch (error) {
                 console.error('Error:', error);}
@@ -27,6 +27,7 @@ function ClassesPage() {
             <main >
                 <h1>Classes</h1>
                 <div className="classes-container">
+                    {console.log("apidata in return", apiData)}
                     {apiData.length > 0 ? (
                         apiData.map((dat, index) => (
                                 <ClassComponent key={index} data={dat}/>
