@@ -10,7 +10,7 @@ function BasicDragonBackground(props) {
             <div className={"imageLeft"}>
                 <img src={flippedDragon} alt="image of a dragon"/>
             </div>
-            {props.children}
+                {props.children}
             <div className={"imageRight"}>
                 <img src={dragon} alt="image of a dragon"/>
             </div>

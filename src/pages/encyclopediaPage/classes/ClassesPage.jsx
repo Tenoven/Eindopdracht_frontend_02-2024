@@ -29,7 +29,7 @@ function ClassesPage() {
                 <div className="classes-container">
                     {apiData.length > 0 ? (
                         apiData.map((dat, index) => (
-                                <ClassComponent key={index} name={dat.name} description={dat.desc}/>
+                                <ClassComponent key={index} data={dat}/>
                         ))
                     ) : (
                         <p>Loading...</p>

@@ -1,8 +1,16 @@
 .boxes {
+    background-color: #35061B;
     display: flex;
     flex-direction: column;
     min-width: 16vw;
     min-height: 15vh;
     align-items: center;
     gap: 12px;
+}
+
+.descriptionSection {
+
+}
+
+.classTable {
 }

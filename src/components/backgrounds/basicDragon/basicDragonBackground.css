@@ -8,12 +8,7 @@
     justify-content: center;
 }
 
-.imageLeft {
-    max-width: 20vw;
-    align-self: center;
-}
-
-.imageRight {
+.image {
     max-width: 20vw;
     align-self: center;
 }
