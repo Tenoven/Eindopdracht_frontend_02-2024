@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
-import BackgroundComponent from "../../../components/backgroundComponent/backgroundComponent.jsx";
+import BackgroundComponent from "../../../components/encyclopediacomponents/backgroundComponent/backgroundComponent.jsx";
 import "./BackgroundPage.css"
 
 function BackgroundPage() {

@@ -1,6 +1,7 @@
 import "./ClassComponent.css";
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import Button from "../../buttons/button.jsx";
 
 function ClassComponent(props) {
     const [showMore, setShowMore] = useState(false);
@@ -26,11 +27,11 @@ function ClassComponent(props) {
                         <pre className="classTable">{apiData.table}</pre>
                         <h3>Class details:</h3>
                         <ReactMarkdown className="descriptionSection">{apiData.desc}</ReactMarkdown>
-                        <button onClick={() => setShowMore(false)}>Show less</button>
+                        <Button className="yellow" onClick={() => setShowMore(false)}>Show less</Button>
                     </>
                 ) : (
                     <>
-                        <button onClick={() => setShowMore(true)}>Show more</button>
+                        <Button className="yellow" onClick={() => setShowMore(true)}>Show more</Button>
                     </>
                 )}
             </fieldset>

@@ -1,5 +1,5 @@
 import "./encyclopediaPage.css"
-import EncyclopediaTile from "../../components/ecyclopediaTile/encyclopediaTile.jsx";
+import EncyclopediaTile from "../../components/encyclopediacomponents/ecyclopediaTile/encyclopediaTile.jsx";
 import raceimg from "../../assets/Races.png"
 import classesimg from "../../assets/Classes.png"
 import backgroundimg from "../../assets/Backgrounds.png"

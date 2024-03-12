@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import SubmitButton from "../buttons/submitButton/submitButton.jsx";
 import "./searchBar.css"
+import Button from "../buttons/button.jsx";
 
 function SearchBar() {
 
@@ -26,7 +26,7 @@ function SearchBar() {
             <section className="searchbar">
                 <form className="searchForm" onSubmit={handleSubmit}>
                     <input type="text" className="searchFormInput" onChange={handleChange} name="searchInput" />
-                    <SubmitButton buttonName={"Search"}></SubmitButton>
+                    <Button type="submit" className="searchbarButton">Search</Button>
                 </form>
             </section>
         </>
