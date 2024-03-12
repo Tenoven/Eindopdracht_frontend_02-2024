@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import "./ClassesPage.css"
-import ClassComponent from "../../../components/classComponents/ClassComponent.jsx";
+import ClassComponent from "../../../components/encyclopediacomponents/classComponents/ClassComponent.jsx";
 
 function ClassesPage() {
 

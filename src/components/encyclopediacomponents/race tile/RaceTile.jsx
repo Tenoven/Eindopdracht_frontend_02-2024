@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import "./RaceTile.css"
 import ReactMarkdown from "react-markdown";
+import Button from "../../buttons/button.jsx";
 
 function RaceComponent(props) {
 
@@ -23,11 +24,11 @@ function RaceComponent(props) {
                         <ReactMarkdown>{apiData.traits}</ReactMarkdown>
                         <ReactMarkdown>{apiData.vision}</ReactMarkdown>
 
-                        <button onClick={() => setShowMore(false)}>Show less</button>
+                        <Button className="yellow" onClick={() => setShowMore(false)}>Show less</Button>
                     </>
                 ) : (
                     <>
-                        <button onClick={() => setShowMore(true)}>Show more</button>
+                        <Button className="yellow" onClick={() => setShowMore(true)}>Show more</Button>
                     </>
                 )}
             </fieldset>

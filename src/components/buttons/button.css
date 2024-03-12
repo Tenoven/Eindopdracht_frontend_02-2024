@@ -1,0 +1,17 @@
+.yellow {
+    border: 2px white solid;
+    border-radius: 0;
+    background-color: #E6AF2E;
+    color: white;
+    padding: 4px 16px;
+}
+
+.searchbarButton {
+    border: 2px white solid;
+    border-radius: 0 300px 300px 0;
+    background-color: #E6AF2E;
+    color: white;
+    height: 35px ;
+    width: 100px;
+    padding: none;
+}

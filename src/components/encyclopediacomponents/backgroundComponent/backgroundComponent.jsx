@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import ReactMarkdown from "react-markdown";
 import "./backgroundComponent.css"
+import Button from "../../buttons/button.jsx";
 
 function BackgroundComponent(props) {
 
@@ -27,11 +28,11 @@ function BackgroundComponent(props) {
                         <h3>suggested characteristics</h3>
                         <ReactMarkdown>{apiData.suggested_characteristics}</ReactMarkdown>
 
-                        <button onClick={() => setShowMore(false)}>Show less</button>
+                        <Button className="yellow" onClick={() => setShowMore(false)}>Show less</Button>
                     </>
                 ) : (
                     <>
-                        <button onClick={() => setShowMore(true)}>Show more</button>
+                        <Button className="yellow" onClick={() => setShowMore(true)}>Show more</Button>
                     </>
                 )}
             </fieldset>

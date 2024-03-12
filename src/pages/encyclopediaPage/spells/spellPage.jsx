@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
+import Button from "../../../components/buttons/button.jsx";
 
 function SpellPage() {
     let apiData = {}
@@ -22,10 +23,10 @@ function SpellPage() {
         <BasicDragonBackground>
             <main>
                 <p>spells page</p>
-                <button type="button" onClick={() => {
+                <Button type="button" onClick={() => {
                     console.log(apiData)}}>
                     test
-                </button>
+                </Button>
             </main>
         </BasicDragonBackground>
     );

@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
-import RaceComponent from "../../../components/race tile/RaceTile.jsx";
+import RaceComponent from "../../../components/encyclopediacomponents/race tile/RaceTile.jsx";
 import "./racePage.css"
 
 function RacePage() {

@@ -4,7 +4,7 @@ import "./characterCreator.css"
 import StatBlock from "../../components/statBlock/statBlock.jsx";
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import {statCalculator} from "../../Helpers/stat-roller/statDiceRoller.js";
-import MainButton from "../../components/buttons/mainButton/mainButton.jsx";
+import Button from "../../components/buttons/button.jsx";
 
 //////// main function: ////////
 function CharacterCreator() {
@@ -86,7 +86,7 @@ function CharacterCreator() {
                                 <StatBlock generation={chosenStatType} stat="CHA" onChange={handleChange} value={formState.CHA}></StatBlock>
                             </form>
                                 {chosenStatType === "manualDigi" && (
-                                    <MainButton onClick={generateStats} buttonName="Generate stats"></MainButton>
+                                    <Button onClick={generateStats} buttonName="Generate stats"></Button>
                                 )}
                         </section>
                     </article>
