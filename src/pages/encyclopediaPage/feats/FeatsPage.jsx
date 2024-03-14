@@ -11,9 +11,6 @@ function FeatsPage() {
     const [apiLink, setApiLink] = useState("https://api.open5e.com/v1/feats/?format=json")
 
     useEffect(() => {
-
-
-
         async function apiGetInfo() {
             try {
                 const response = await axios.get(apiLink);
