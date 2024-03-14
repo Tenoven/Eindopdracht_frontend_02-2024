@@ -1,25 +1,28 @@
 import {useState} from "react";
-import ReactMarkdown from "react-markdown";
 import Button from "../../buttons/button.jsx";
 
-function ItemComponent(props) {
+function WeaponComponent(props) {
 
     const [showMore, setShowMore] = useState(false);
     const apiData = props.data
 
     return (
-        <div className="magicCard">
+        <div className="weaponCard">
             <fieldset className="boxes">
                 <h2>{apiData.name}</h2>
 
                 {showMore ? (
                     <>
-                        <h3>{"Type: "+ apiData.type}</h3>
-                        <h3>{"Rarity: "+ apiData.rarity}</h3>
-                        {apiData.requires_attunement !== null && (
-                            <ReactMarkdown>{apiData.requires_attunement}</ReactMarkdown>
-                        )}
-                        <ReactMarkdown>{apiData.desc}</ReactMarkdown>
+                        <p> {"Cost: "+ apiData.cost}</p>
+                        <p> {apiData.category} </p>
+                        <p> {apiData.damage_dice} {apiData.damage_type}</p>
+                        <h3>Properties:</h3>
+                        <ul>
+                        {apiData.properties.map((effect, index) => (
+                            <li key={index}>{effect}</li>
+                        ))}
+                        </ul>
+
                         <Button className="yellow" onClick={() => setShowMore(false)}>Show less</Button>
                     </>
                 ) : (
@@ -30,5 +33,4 @@ function ItemComponent(props) {
         </div>
     );
 }
-
-export default ItemComponent
+export default WeaponComponent
