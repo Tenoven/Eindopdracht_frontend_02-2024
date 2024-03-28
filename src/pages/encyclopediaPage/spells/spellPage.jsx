@@ -46,7 +46,6 @@ function SpellPage() {
                 </div>
 
                 <div className="spell-container">
-                    {console.log("apidata in return", apiData)}
                     {apiData.count > 0 ? (
                         apiData.results.map((dat, index) => (
                             <SpellComponent key={index} data={dat}/>

@@ -1,0 +1,16 @@
+.monster-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    min-height: 85vh;
+    max-width: 60vw;
+    margin-bottom: 24px;
+}
+
+.prevNextButtons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-self: center;
+}

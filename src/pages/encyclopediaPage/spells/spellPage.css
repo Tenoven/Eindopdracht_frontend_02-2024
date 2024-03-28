@@ -8,12 +8,6 @@
     margin-bottom: 24px;
 }
 
-.featPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .prevNextButtons {
     display: flex;
     gap: 12px;

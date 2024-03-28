@@ -1,0 +1,26 @@
+.info_column {
+    width: 100%;
+    display: flex;
+    padding-bottom: 16px;
+    flex-direction: column;
+    border-bottom: #E6AF2E 1px solid;
+    vertical-align: bottom;
+}
+
+section > h3 {
+    color: #E6AF2E;
+    align-self: flex-start;
+}
+.info_row {
+    width: 100%;
+    display: flex;
+    padding-bottom: 16px;
+    flex-direction: row;
+    border-bottom: #E6AF2E 1px solid;
+    vertical-align: bottom;
+}
+
+.boxes {
+    padding: 12px 8px 12px 8px;
+
+}
