@@ -32,4 +32,14 @@
     flex-direction: row;
     justify-content: center;
     gap: 20px;
+    height: 95px;
+    margin-bottom: 20px;
+}
+
+.manualDigiExtra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
 }

@@ -1,26 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import "./statBlock.css"
-import {statCalculator} from "../../Helpers/stat-roller/statDiceRoller.js";
 
 function StatBlock(props) {
 
     const [statComponent, setStatComponent] = useState(null)
-    const [generateStatButton, setGenerateStatButton] = useState(null)
 
+    const newArray = [...props.statArray]
 
     useEffect(() => {
         switch (props.generation) {
             case "standardArray":
                 setStatComponent(
                     <div className="underside">
-
-                    </div>);
-                break;
-
-            case "pointBuy":
-                setStatComponent(
-                    <div className="underside">
-
+                        <select name={props.stat} defaultValue=" " onChange={props.onChange}>
+                            <option value=" ">--</option>
+                            {props.standardArray.map((stat, index) => {
+                                return (
+                                    <option key={index} value={stat}>{stat}</option>
+                                )})}
+                        </select>
                     </div>);
                 break;
 
@@ -32,13 +30,22 @@ function StatBlock(props) {
                 break;
 
             case "manualDigi":
+                console.log(props.statArray)
                 setStatComponent(
-                    <div className="underside">
+                            <div className="underside">
+                                <select name={props.stat} defaultValue=" " onChange={props.onChange}>
+                                    <option value=" ">--</option>
+                                    {props.statArray.map((stat, index) => {
+                                        return (
+                                            <option key={index} value={stat}>{stat}</option>
+                                        )})}
+                                </select>
+                            </div>);
 
-                    </div>);
+
                 break;
         }
-    }, [props.generation, props.value]);
+    }, [props.generation, props.value, props.statArray]);
 
 
     return (
@@ -46,7 +53,6 @@ function StatBlock(props) {
             <div className="statCard">
                 <h3 className="title">{props.stat}</h3>
                 {statComponent}
-                {generateStatButton}
             </div>
         </>
     );

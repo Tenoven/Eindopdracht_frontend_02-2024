@@ -1,5 +1,5 @@
 //////// imports: ////////
-import React, {useState} from 'react';
+import {useState} from 'react';
 import "./characterCreator.css"
 import StatBlock from "../../components/statBlock/statBlock.jsx";
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
@@ -9,8 +9,11 @@ import Button from "../../components/buttons/button.jsx";
 //////// main function: ////////
 function CharacterCreator() {
 
-    //////// use states: ////////
-    const [chosenStatType, setChosenStatType] = useState("")
+    //////// use states & constants: ////////
+    const [chosenStatType, setChosenStatType] = useState(null)
+    const [statArray, setStatArray] = useState([])
+    const [buttonState, setButtonState] = useState(false)
+
     const [formState, setFormstate] =useState({
         STR: "",
         DEX: "",
@@ -20,18 +23,18 @@ function CharacterCreator() {
         CHA: "",
     })
 
-    let statArray = []
-
+    // let statArray = []
+    let standardArray = [15, 14, 13, 12, 10, 8]
+    let usedNumbers = []
 
     //////// functions: ////////
     const generateStats = () => {
-        // Use a for loop to generate stats and push them into the statArray
-        statArray= []
+        const newStatArray = [];
         for (let i = 0; i < 6; i++) {
-            statArray.push(statCalculator());
+            newStatArray.push(statCalculator());
         }
-
-        console.log(statArray)
+        setStatArray(newStatArray);
+        setButtonState(true)
     };
 
     const handleOptionChange = (event) => {
@@ -40,6 +43,9 @@ function CharacterCreator() {
 
     function handleChange(event){
         const changedFieldName = event.target.name
+        console.log(event.target.name)
+
+        console.log(event.target.value)
 
         setFormstate( formState => ({
             ...formState,
@@ -62,11 +68,6 @@ function CharacterCreator() {
                             </div>
 
                             <div>
-                                <input type="radio" id="pointBuy" value="pointBuy" checked={chosenStatType === "pointBuy"} onChange={handleOptionChange}/>
-                                <label htmlFor="pointBuy">Point buy</label>
-                            </div>
-
-                            <div>
                                 <input type="radio" id="manualIrl" value="manualIrl" checked={chosenStatType === "manualIrl"} onChange={handleOptionChange}/>
                                 <label htmlFor="manualIrl">Manual rolled (irl dice)</label>
                             </div>
@@ -78,17 +79,25 @@ function CharacterCreator() {
                         </form>
                         <section >
                             <form className="statSection">
-                                <StatBlock generation={chosenStatType} stat="STR" onChange={handleChange} value={formState.STR}></StatBlock>
-                                <StatBlock generation={chosenStatType} stat="DEX" onChange={handleChange} value={formState.DEX}></StatBlock>
-                                <StatBlock generation={chosenStatType} stat="CON" onChange={handleChange} value={formState.CON}></StatBlock>
-                                <StatBlock generation={chosenStatType} stat="WIS" onChange={handleChange} value={formState.WIS}></StatBlock>
-                                <StatBlock generation={chosenStatType} stat="INT" onChange={handleChange} value={formState.INT}></StatBlock>
-                                <StatBlock generation={chosenStatType} stat="CHA" onChange={handleChange} value={formState.CHA}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="STR" onChange={handleChange} value={formState.STR} standardArray={standardArray} statArray={statArray}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="DEX" onChange={handleChange} value={formState.DEX} standardArray={standardArray} statArray={statArray}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="CON" onChange={handleChange} value={formState.CON} standardArray={standardArray} statArray={statArray}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="WIS" onChange={handleChange} value={formState.WIS} standardArray={standardArray} statArray={statArray}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="INT" onChange={handleChange} value={formState.INT} standardArray={standardArray} statArray={statArray}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="CHA" onChange={handleChange} value={formState.CHA} standardArray={standardArray} statArray={statArray}></StatBlock>
                             </form>
-                                {chosenStatType === "manualDigi" && (
-                                    <Button onClick={generateStats} buttonName="Generate stats"></Button>
-                                )}
                         </section>
+                            {chosenStatType === "manualDigi" && (
+                                <div className="manualDigiExtra">
+                                    <p>Make sure you use a stat only once!</p>
+                                    <Button type="button" className="yellow" onClick={generateStats} disabled={buttonState}>generate stats</Button>
+                                </div>
+                            )}
+                            {chosenStatType === "standardArray" && (
+                                <div className="manualDigiExtra">
+                                    <p>Make sure you use a stat only once!</p>
+                                </div>
+                            )}
                     </article>
                     <button type="button" onClick={() => console.log(formState)}>test</button>
                 </main>
