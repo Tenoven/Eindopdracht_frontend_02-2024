@@ -30,7 +30,6 @@ function StatBlock(props) {
                 break;
 
             case "manualDigi":
-                console.log(props.statArray)
                 setStatComponent(
                             <div className="underside">
                                 <select name={props.stat} defaultValue=" " onChange={props.onChange}>
@@ -44,6 +43,14 @@ function StatBlock(props) {
 
 
                 break;
+                
+            case "filled":
+                setStatComponent(
+                    <div className="underside">
+                        <input disabled="true" type="text" value={localStorage.getItem(`${props.stat}`) ? JSON.parse(localStorage.getItem(`${props.stat}`)): null }/>
+                    </div>
+                )
+                
         }
     }, [props.generation, props.value, props.statArray]);
 

@@ -6,19 +6,19 @@ import ClassComponent from "../../../components/encyclopediacomponents/classComp
 
 function ClassesPage() {
 
-    const [apiData, setApiData] = useState([]);
+    const [apiClassData, setApiClassData] = useState([]);
 
 
     useEffect(() => {
-        async function apiGetInfo() {
+        async function apiGetClassInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/classes/?format=json");
                 console.log("apiData in fetch",response.data.results)
-                setApiData(response.data.results)
+                setApiClassData(response.data.results)
             } catch (error) {
                 console.error('Error:', error);}
         }
-        void apiGetInfo()
+        void apiGetClassInfo()
     }, [])
 
     return (
@@ -26,9 +26,9 @@ function ClassesPage() {
             <main >
                 <h1>Classes</h1>
                 <div className="classes-container">
-                    {console.log("apidata in return", apiData)}
-                    {apiData.length > 0 ? (
-                        apiData.map((dat, index) => (
+                    {console.log("apidata in return", apiClassData)}
+                    {apiClassData.length > 0 ? (
+                        apiClassData.map((dat, index) => (
                                 <ClassComponent key={index} data={dat}/>
                         ))
                     ) : (
