@@ -9,6 +9,7 @@ import axios from "axios";
 import RaceComponent from "../../components/encyclopediacomponents/race tile/RaceTile.jsx";
 import ClassComponent from "../../components/encyclopediacomponents/classComponents/ClassComponent.jsx";
 import BackgroundComponent from "../../components/encyclopediacomponents/backgroundComponent/backgroundComponent.jsx";
+import {ClearCharacterForm} from "../../Helpers/ClearCharacterForm.js";
 
 //////// main function: ////////
 function CharacterCreator() {
@@ -97,9 +98,7 @@ function CharacterCreator() {
                         <form className="box">
                             <div className="flexColumn">
                                 <label htmlFor="">What is your characters name?</label>
-                                {/*<input type="text" onChange={handleChange} name="name" value={localStorage.getItem("info")}/>*/}
                                 <input type="text" onChange={handleChange} name="name" value={localStorage.getItem("name") ? JSON.parse(localStorage.getItem("name")): null } />
-
                             </div>
                             <div className="flexColumn">
                                 <label htmlFor="">What is your characters age?</label>
@@ -147,12 +146,12 @@ function CharacterCreator() {
                         </form>
                         <section >
                             <form className="statSection">
-                                <StatBlock generation={chosenStatType} stat="STR" onChange={handleChange} value={localStorage.getItem("STR")} standardArray={standardArray} statArray={statArray}></StatBlock>
-                                <StatBlock generation={chosenStatType} stat="DEX" onChange={handleChange} value={localStorage.getItem("DEX")} standardArray={standardArray} statArray={statArray}></StatBlock>
-                                <StatBlock generation={chosenStatType} stat="CON" onChange={handleChange} value={localStorage.getItem("CON")} standardArray={standardArray} statArray={statArray}></StatBlock>
-                                <StatBlock generation={chosenStatType} stat="WIS" onChange={handleChange} value={localStorage.getItem("WIS")} standardArray={standardArray} statArray={statArray}></StatBlock>
-                                <StatBlock generation={chosenStatType} stat="INT" onChange={handleChange} value={localStorage.getItem("INT")} standardArray={standardArray} statArray={statArray}></StatBlock>
-                                <StatBlock generation={chosenStatType} stat="CHA" onChange={handleChange} value={localStorage.getItem("CHA")} standardArray={standardArray} statArray={statArray}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="STR" onChange={handleChange} value={localStorage.getItem("STR") ? JSON.parse(localStorage.getItem("STR")) : null} standardArray={standardArray} statArray={statArray}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="DEX" onChange={handleChange} value={localStorage.getItem("DEX") ? JSON.parse(localStorage.getItem("DEX")) : null} standardArray={standardArray} statArray={statArray}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="CON" onChange={handleChange} value={localStorage.getItem("CON") ? JSON.parse(localStorage.getItem("CON")) : null} standardArray={standardArray} statArray={statArray}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="WIS" onChange={handleChange} value={localStorage.getItem("WIS") ? JSON.parse(localStorage.getItem("WIS")) : null} standardArray={standardArray} statArray={statArray}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="INT" onChange={handleChange} value={localStorage.getItem("INT") ? JSON.parse(localStorage.getItem("INT")) : null} standardArray={standardArray} statArray={statArray}></StatBlock>
+                                <StatBlock generation={chosenStatType} stat="CHA" onChange={handleChange} value={localStorage.getItem("CHA") ? JSON.parse(localStorage.getItem("CHA")) : null} standardArray={standardArray} statArray={statArray}></StatBlock>
                             </form>
                         </section>
                         <section>
@@ -180,8 +179,7 @@ function CharacterCreator() {
                                     )})}
                             </select>
                             {
-
-                                Object.keys(apiRaceData).length > 0 && <RaceComponent key={"banaan"} data={apiRaceData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("race"))))[0]}/>
+                                Object.keys(apiRaceData).length > 0 && <RaceComponent data={apiRaceData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("race"))))[0]}/>
                             }
                         </form>
                     </article>
@@ -196,7 +194,7 @@ function CharacterCreator() {
                                     )})}
                             </select>
                             {
-                                Object.keys(apiClassData).length > 0 && <ClassComponent key={"banaan"} data={apiClassData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("class"))))[0]}/>
+                                Object.keys(apiClassData).length > 0 && <ClassComponent data={apiClassData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("class"))))[0]}/>
                             }
                         </form>
                     </article>
@@ -211,10 +209,12 @@ function CharacterCreator() {
                                     )})}
                             </select>
                             {
-                                Object.keys(apiBackgroundData).length > 0 && <BackgroundComponent key={"banaan"} data={apiBackgroundData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("background"))))[0]}/>
+                                Object.keys(apiBackgroundData).length > 0 && <BackgroundComponent data={apiBackgroundData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("background"))))[0]}/>
                             }
                         </form>
                     </article>
+
+                    <Button type="button" onClick={ClearCharacterForm}>Clear form</Button>
                 </main>
             </BasicDragonBackground>
         </>

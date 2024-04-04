@@ -47,7 +47,7 @@ function StatBlock(props) {
             case "filled":
                 setStatComponent(
                     <div className="underside">
-                        <input disabled="true" type="text" value={localStorage.getItem(`${props.stat}`) ? JSON.parse(localStorage.getItem(`${props.stat}`)): null }/>
+                        <input disabled={true} type="text" value={localStorage.getItem(`${props.stat}`) ? JSON.parse(localStorage.getItem(`${props.stat}`)): null }/>
                     </div>
                 )
                 
