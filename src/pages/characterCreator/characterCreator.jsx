@@ -22,7 +22,6 @@ function CharacterCreator() {
     const [statArray, setStatArray] = useState([])
     const [buttonState, setButtonState] = useState(false)
 
-
     let standardArray = [15, 14, 13, 12, 10, 8]
 
     //////// Api Calls ////////
@@ -30,7 +29,7 @@ function CharacterCreator() {
         async function apiGetRaceInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/races/?format=json");
-                console.log("apiData in fetch",response.data.results)
+                console.log("race",response.data.results)
                 setApiRaceData(response.data.results)
             } catch (error) {
                 console.error('Error:', error);
@@ -41,7 +40,7 @@ function CharacterCreator() {
         async function apiGetClassInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/classes/?format=json");
-                console.log("apiData in fetch",response.data.results)
+                console.log("class",response.data.results)
                 setApiClassData(response.data.results)
             } catch (error) {
                 console.error('Error:', error);}
@@ -51,15 +50,15 @@ function CharacterCreator() {
         async function apiGetBackgroundInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/backgrounds/?format=json");
-                console.log(response.data.results)
-                setBackgroundApiData (response.data.results)
+                console.log('background', response.data.results)
+                setBackgroundApiData(response.data.results)
             } catch (error) {
                 console.error('Error:', error);
             }
         }
         void apiGetBackgroundInfo()
 
-    }, [])
+    }, [apiRaceData, apiBackgroundData, apiClassData])
 
 
     //////// functions: ////////
@@ -179,7 +178,8 @@ function CharacterCreator() {
                                     )})}
                             </select>
                             {
-                                Object.keys(apiRaceData).length > 0 && <RaceComponent data={apiRaceData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("race"))))[0]}/>
+                                localStorage.getItem("race") && Object.keys(apiRaceData).length > 0 &&
+                                <RaceComponent data={apiRaceData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("race"))))[0]}/>
                             }
                         </form>
                     </article>
@@ -194,7 +194,8 @@ function CharacterCreator() {
                                     )})}
                             </select>
                             {
-                                Object.keys(apiClassData).length > 0 && <ClassComponent data={apiClassData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("class"))))[0]}/>
+                                localStorage.getItem("class") && Object.keys(apiClassData).length > 0 &&
+                                <ClassComponent data={apiClassData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("class"))))[0]}/>
                             }
                         </form>
                     </article>
@@ -209,7 +210,8 @@ function CharacterCreator() {
                                     )})}
                             </select>
                             {
-                                Object.keys(apiBackgroundData).length > 0 && <BackgroundComponent data={apiBackgroundData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("background"))))[0]}/>
+                                localStorage.getItem("background") && Object.keys(apiBackgroundData).length > 0 &&
+                                <BackgroundComponent data={apiBackgroundData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("background"))))[0]}/>
                             }
                         </form>
                     </article>
