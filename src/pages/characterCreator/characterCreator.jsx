@@ -10,6 +10,7 @@ import RaceComponent from "../../components/encyclopediacomponents/race tile/Rac
 import ClassComponent from "../../components/encyclopediacomponents/classComponents/ClassComponent.jsx";
 import BackgroundComponent from "../../components/encyclopediacomponents/backgroundComponent/backgroundComponent.jsx";
 import {ClearCharacterForm} from "../../Helpers/ClearCharacterForm.js";
+import {NavLink} from "react-router-dom";
 
 //////// main function: ////////
 function CharacterCreator() {
@@ -17,48 +18,70 @@ function CharacterCreator() {
     //////// use states & constants: ////////
     const [apiRaceData, setApiRaceData] = useState([]);
     const [apiClassData, setApiClassData] = useState([]);
-    const [apiBackgroundData, setBackgroundApiData] = useState([]);
+    const [apiBackgroundData, setApiBackgroundData] = useState([]);
     const [chosenStatType, setChosenStatType] = useState("filled")
     const [statArray, setStatArray] = useState([])
     const [buttonState, setButtonState] = useState(false)
 
+    const [formState, setFormstate] =useState({
+        name: "",
+        age: "",
+        height: "",
+        weight: "",
+        eyeColour: "",
+        skinColour: "",
+        hairColour: "",
+        STR: "",
+        DEX: "",
+        CON: "",
+        WIS: "",
+        INT: "",
+        CHA: "",
+        race: "",
+        class: "",
+        background: "",
+
+
+    })
+
     let standardArray = [15, 14, 13, 12, 10, 8]
 
     //////// Api Calls ////////
-    useEffect(() => {
+       useEffect(() => {
+           apiGetRaceInfo()
+           apiGetClassInfo()
+           apiGetBackgroundInfo()
+       }, [])
+
         async function apiGetRaceInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/races/?format=json");
-                console.log("race",response.data.results)
-                setApiRaceData(response.data.results)
+                console.log("race", response.data.results)
+                setApiRaceData(response.data.results);
             } catch (error) {
                 console.error('Error:', error);
             }
         }
-        void apiGetRaceInfo()
 
         async function apiGetClassInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/classes/?format=json");
-                console.log("class",response.data.results)
-                setApiClassData(response.data.results)
+                console.log("class", response.data.results)
+                setApiClassData(response.data.results);
             } catch (error) {
-                console.error('Error:', error);}
+                console.error('Error:', error);
+            }
         }
-        void apiGetClassInfo()
 
         async function apiGetBackgroundInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/backgrounds/?format=json");
                 console.log('background', response.data.results)
-                setBackgroundApiData(response.data.results)
+                setApiBackgroundData(response.data.results);
             } catch (error) {
                 console.error('Error:', error);
             }
         }
-        void apiGetBackgroundInfo()
-
-    }, [apiRaceData, apiBackgroundData, apiClassData])
 
 
     //////// functions: ////////
@@ -79,12 +102,14 @@ function CharacterCreator() {
     function handleChange(event) {
         const changedFieldName = event.target.name;
         const newValue = event.target.value;
+        setFormstate( formState => ({
+            ...formState,
+            [changedFieldName]: event.target.value,
+        }))
 
-        // Update localStorage for the specific field
         localStorage.setItem(changedFieldName, JSON.stringify(newValue));
+
     }
-
-
 
     //////// return: ////////
     return (
@@ -215,8 +240,10 @@ function CharacterCreator() {
                             }
                         </form>
                     </article>
-
-                    <Button type="button" onClick={ClearCharacterForm}>Clear form</Button>
+                    <article className="buttons">
+                        <Button type="button" onClick={ClearCharacterForm} className="yellow">Clear form</Button>
+                        <NavLink to="/charactercreator/charactersheet" className="navButton" > Create character</NavLink>
+                    </article>
                 </main>
             </BasicDragonBackground>
         </>

@@ -25,7 +25,6 @@
     background-color: #35061B;
     gap: 8px;
     padding-bottom: 12px;
-
 }
 
 .radios {
@@ -49,4 +48,24 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 12px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.navButton{
+    border: 2px solid white ;
+    background: #E6AF2E;
+    text-decoration: none;
+    padding: 4px 16px;
+    color: white;
+    font-size: 1em;
+}
+.navButton:hover{
+    color: white;
+    border-color: white;
 }

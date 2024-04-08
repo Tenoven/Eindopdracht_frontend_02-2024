@@ -22,6 +22,7 @@ import ArmorPage from "./pages/encyclopediaPage/items/armor/ArmorPage.jsx";
 import MagicItemPage from "./pages/encyclopediaPage/items/MagicitemsPage/MagicItemPage.jsx";
 import RacePage from "./pages/encyclopediaPage/races/racePage.jsx";
 import RaceComponent from "./components/encyclopediacomponents/race tile/RaceTile.jsx";
+import CharacterSheet from "./pages/characterCreator/character sheet/characterSheet.jsx";
 
 function App() {
   return (
@@ -48,12 +49,14 @@ function App() {
                   <Route path="/encyclopedia/items/weapons" element={<WeaponPage/>} />
                   <Route path="/encyclopedia/items/armor" element={<ArmorPage/>} />
                   <Route path="/encyclopedia/items/magicitems" element={<MagicItemPage/>} />
-                <Route path="/charactercreator/:race" element={<RaceComponent/>}></Route>
+
+
 
                 <Route path="/encyclopedia/spells" element={<SpellPage/>} />
                 <Route path="/encyclopedia/monsters" element={<MonsterPage/>} />
 
               <Route path="/charactercreator" element={<CharacterCreator/>} />
+                <Route path="/charactercreator/charactersheet" element={<CharacterSheet/>}/>
 
               {/*<Route path="/" element={} />*/}
               {/*<Route path="/" element={} />*/}
