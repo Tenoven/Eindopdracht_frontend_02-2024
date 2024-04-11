@@ -9,7 +9,6 @@ import RegisterPage from "./pages/registerPage/registerPage.jsx";
 import CharacterCreator from "./pages/characterCreator/characterCreator.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
 import EncyclopediaPage from "./pages/encyclopediaPage/encyclopediaPage.jsx";
-import {statCalculator} from "./Helpers/stat-roller/statDiceRoller.js";
 import SearchBar from "./components/SearchBar/searchBar.jsx";
 import BackgroundPage from "./pages/encyclopediaPage/backgrounds/BackgroundPage.jsx";
 import ClassesPage from "./pages/encyclopediaPage/classes/ClassesPage.jsx";
@@ -21,7 +20,6 @@ import WeaponPage from "./pages/encyclopediaPage/items/WeaponPage/WeaponPage.jsx
 import ArmorPage from "./pages/encyclopediaPage/items/armor/ArmorPage.jsx";
 import MagicItemPage from "./pages/encyclopediaPage/items/MagicitemsPage/MagicItemPage.jsx";
 import RacePage from "./pages/encyclopediaPage/races/racePage.jsx";
-import RaceComponent from "./components/encyclopediacomponents/race tile/RaceTile.jsx";
 import CharacterSheet from "./pages/characterCreator/character sheet/characterSheet.jsx";
 
 function App() {
