@@ -1,6 +1,6 @@
 .statCard {
     width: 6vw;
-    height: 20vh;
+    height: 10vh;
 }
 
 .title {
@@ -12,7 +12,6 @@
 
 
 .underside > input {
-    /*align-content: center;*/
     text-align: center;
     font-size: larger;
     background-color: white;

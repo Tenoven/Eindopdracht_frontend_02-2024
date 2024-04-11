@@ -1,10 +1,16 @@
 .creatorBody{
-    height: 90vh;
+    min-height: 90vh;
     min-width: 60vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    gap: 20px;
+}
+
+.flexColumn{
+    display: flex;
+    flex-direction: column;
 }
 
 .boxTitle {
@@ -12,12 +18,13 @@
     justify-content: center;
 }
 
-.statBox {
+.box {
     width: 100%;
     display: flex;
     flex-direction: column;
     background-color: #35061B;
     gap: 8px;
+    padding-bottom: 12px;
 }
 
 .radios {
@@ -33,7 +40,6 @@
     justify-content: center;
     gap: 20px;
     height: 95px;
-    margin-bottom: 20px;
 }
 
 .manualDigiExtra {
@@ -42,4 +48,24 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 12px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.navButton{
+    border: 2px solid white ;
+    background: #E6AF2E;
+    text-decoration: none;
+    padding: 4px 16px;
+    color: white;
+    font-size: 1em;
+}
+.navButton:hover{
+    color: white;
+    border-color: white;
 }

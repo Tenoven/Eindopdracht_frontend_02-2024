@@ -5,19 +5,19 @@ import RaceComponent from "../../../components/encyclopediacomponents/race tile/
 import "./racePage.css"
 
 function RacePage() {
-    const [apiData, setApiData] = useState([]);
+    const [apiRaceData, setApiRaceData] = useState([]);
 
     useEffect(() => {
-        async function apiGetInfo() {
+        async function apiGetRaceInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/races/?format=json");
                 console.log("apiData in fetch",response.data.results)
-                setApiData(response.data.results)
+                setApiRaceData(response.data.results)
             } catch (error) {
                 console.error('Error:', error);
             }
         }
-        void apiGetInfo()
+        void apiGetRaceInfo()
     }, [])
 
     return (
@@ -25,9 +25,9 @@ function RacePage() {
             <main >
                 <h1>Races</h1>
                 <div className="race-container">
-                    {console.log("apiData in return", apiData)}
-                    {apiData.length > 0 ? (
-                        apiData.map((dat, index) => (
+                    {console.log("apiData in return", apiRaceData)}
+                    {apiRaceData.length > 0 ? (
+                        apiRaceData.map((dat, index) => (
                             <RaceComponent key={index} data={dat}/>
                         ))
                     ) : (

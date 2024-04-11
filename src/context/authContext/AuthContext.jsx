@@ -9,66 +9,79 @@ export const AuthContext = createContext({})
 const AuthContextProvider = ({children}) => {
 
     const navigate = useNavigate();
+    const [isAuth, setIsAuth] = useState({
+        isAuth: false,
+        user: {
+            email: "",
+            password: "",
+            username: "",
+        },
+        status: "pending",
+    });
 
     useEffect(() => {
-        console.log("Context wordt gerefresht!")
         if(localStorage.getItem("token")){
             const decoded = jwtDecode(localStorage.getItem("token"))
             const token = localStorage.getItem("token")
             void fetchUserData(decoded, token)
-            console.log("er is een token", token)
         }else{
-            setIsAuth({isAuth: false,
+            setIsAuth({
+                isAuth: false,
                 user:"",
                 status: "done",
             })
-            console.log("er is geen token")
         }
     }, []);
 
-    const [isAuth, setIsAuth] = useState({
-        isAuthenticated: false,
-        user: {
-            email: "",
-            id: "",
-        },
-        status: `pending`
-    })
 
-    async function loginRequest(loginData) {
+    function loginRequest(token, passWord) {
+        const decoded = jwtDecode(token)
+
+        setIsAuth((isAuth) => ({
+            ...isAuth,
+            isAuth: true,
+            user: {...isAuth.user, username: decoded.sub, password: passWord, token: token}
+        }));
+        localStorage.setItem("token", token)
+
+        void fetchUserData(decoded, token)
+    }
+
+    async function fetchUserData(decoded, token) {
+        const id = decoded.sub
         try {
-            const response = await axios.post('https://api.datavortex.nl/fiveecenter/info', loginData);
-
-            localStorage.setItem("token", response.data.accessToken)
-
-            const decoded = jwtDecode(localStorage.getItem("token"))
-            console.log(decoded)
-            setIsAuth({
-                ...isAuth,
-                isAuthenticated: true,
-                user: {
-                    id: decoded.sub,
-                    email: decoded.email,
+            const response = await axios.get(`https://api.datavortex.nl/fiveecenter/users/${id}`, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
                 }
             })
-        } catch (error) {
-            console.error('Error:', error);
-        } finally {
-            navigate("/profile")
+            setIsAuth({
+                isAuth: true, user: {
+                    username: response.data.username,
+                    email: response.data.email,
+                    id: response.data.id,
+                },
+                status: "done",
+            })
+
+        } catch (e) {
+            console.error(e)
         }
+
     }
 
     useEffect(() => {
-        console.log(isAuth)
     }, [isAuth]);
 
     function logOut() {
-        localStorage.removeItem("token")
         setIsAuth({
-            isAuthenticated: false,
+            isAuth: false,
             user: "",
+            status: "done",
         })
-        navigate("/")
+        localStorage.removeItem("token")
+        navigate('/login')
     }
 
     const data = {
