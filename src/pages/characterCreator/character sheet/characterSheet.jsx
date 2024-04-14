@@ -1,9 +1,70 @@
 import StatBlock from "../../../components/statBlock/statBlock.jsx";
 import "./CharacterSheet.css"
 import statTooModifier from "../../../../src/Helpers/statTooModifier.js";
+import LocalToStateObject from "../../../Helpers/LocalToStateObject.js";
+import {useEffect, useState} from "react";
+import axios from "axios";
+import {jwtDecode} from "jwt-decode";
 
 
 function CharacterSheet() {
+    const token = localStorage.getItem("token")
+    const decoded = jwtDecode(token)
+    const username = decoded.sub
+    const [userData, setUserData] = useState({})
+    const [oldInfo, setOldInfo] = useState([])
+    const [newInfo, setNewInfo] = useState([])
+    const formState= LocalToStateObject()
+    console.log(formState)
+    console.log("decoded:" +jwtDecode(token))
+
+    useEffect(() => {
+        void apiGetInfo()
+        void oldInfoPlusNewInfo()
+        void postToApi()
+    }, []);
+
+    async function apiGetInfo() {
+        try {
+            const response = await axios.get(`https://api.datavortex.nl/fiveecenter/users/${username}`, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                }
+            })
+            setUserData (response.data)
+            setOldInfo (response.data.info)
+            console.log(response.data)
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    function oldInfoPlusNewInfo() {
+        setNewInfo({
+            ...oldInfo,
+            formState
+        })
+    }
+
+    async function postToApi() {
+        try {
+            const result = await axios.put(`https://api.datavortex.nl/fiveecenter/users/${username}`, {
+                "name": userData.username,
+                "email": userData.email,
+                "password": userData.password,
+                "info": newInfo
+            },{
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                }
+            });
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
     return (
             <div className="emptyBackground">
                 <h1 className="excludePrint">Dungeons & Dragons Character Sheet</h1>
@@ -124,7 +185,6 @@ function CharacterSheet() {
                                 <p>{statTooModifier(JSON.parse(localStorage.getItem("WIS")))}</p>
                             </div>
                         </div>
-
                     </fieldset>
 
                 </div>

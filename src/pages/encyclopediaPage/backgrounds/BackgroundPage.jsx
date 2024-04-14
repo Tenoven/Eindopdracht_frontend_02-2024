@@ -12,7 +12,6 @@ function BackgroundPage() {
         async function apiGetInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/backgrounds/?format=json");
-                console.log(response.data.results)
                 setApiData (response.data.results)
             } catch (error) {
                 console.error('Error:', error);

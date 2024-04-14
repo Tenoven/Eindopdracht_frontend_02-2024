@@ -38,8 +38,8 @@ function LoginPage(props) {
                     "username": loginState.userName,
                     "password": loginState.passWord,
                 })
-            // console.log(response.data.jwt)
-            loginRequest(response.data.jwt, loginState.password)
+            console.log(response.data);
+            loginRequest(response.data.jwt, loginState.userName);
 
         } catch (e) {
             console.error(e)

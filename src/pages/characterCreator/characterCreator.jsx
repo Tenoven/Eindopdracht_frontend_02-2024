@@ -40,8 +40,6 @@ function CharacterCreator() {
         race: "",
         class: "",
         background: "",
-
-
     })
 
     let standardArray = [15, 14, 13, 12, 10, 8]
@@ -108,6 +106,7 @@ function CharacterCreator() {
         }))
 
         localStorage.setItem(changedFieldName, JSON.stringify(newValue));
+        console.log(formState)
 
     }
 
@@ -242,7 +241,7 @@ function CharacterCreator() {
                     </article>
                     <article className="buttons">
                         <Button type="button" onClick={ClearCharacterForm} className="yellow">Clear form</Button>
-                        <NavLink to="/charactercreator/charactersheet" className="navButton" > Create character</NavLink>
+                        <NavLink to="/charactercreator/charactersheet" className="navButton"> Create character</NavLink>
                     </article>
                 </main>
             </BasicDragonBackground>

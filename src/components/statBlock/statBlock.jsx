@@ -5,8 +5,6 @@ function StatBlock(props) {
 
     const [statComponent, setStatComponent] = useState(null)
 
-    const newArray = [...props.statArray]
-
     useEffect(() => {
         switch (props.generation) {
             case "standardArray":
@@ -25,7 +23,7 @@ function StatBlock(props) {
             case "manualIrl":
                 setStatComponent(
                     <div className="underside">
-                        <input type="text" name={props.stat} onChange={props.onChange} value={props.value} id={props.stat} />
+                        <input type="number" min="1" max="20" name={props.stat} onChange={props.onChange} value={props.value} id={props.stat} />
                     </div>);
                 break;
 
@@ -40,8 +38,6 @@ function StatBlock(props) {
                                         )})}
                                 </select>
                             </div>);
-
-
                 break;
                 
             case "filled":
@@ -50,7 +46,6 @@ function StatBlock(props) {
                         <input disabled={true} type="text" value={localStorage.getItem(`${props.stat}`) ? JSON.parse(localStorage.getItem(`${props.stat}`)): null }/>
                     </div>
                 )
-                
         }
     }, [props.generation, props.value, props.statArray]);
 

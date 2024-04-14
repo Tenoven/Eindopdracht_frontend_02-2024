@@ -10,7 +10,7 @@ const AuthContextProvider = ({children}) => {
 
     const navigate = useNavigate();
     const [isAuth, setIsAuth] = useState({
-        isAuth: false,
+        isAuthenticated: false,
         user: {
             email: "",
             password: "",
@@ -18,69 +18,78 @@ const AuthContextProvider = ({children}) => {
         },
         status: "pending",
     });
+    const currentTime = Date.now()
 
     useEffect(() => {
         if(localStorage.getItem("token")){
             const decoded = jwtDecode(localStorage.getItem("token"))
             const token = localStorage.getItem("token")
-            void fetchUserData(decoded, token)
+            void fetchUserData(decoded, token, false)
+            decoded.exp >= currentTime
         }else{
             setIsAuth({
-                isAuth: false,
+                isAuthenticated: false,
                 user:"",
                 status: "done",
             })
         }
+
+
     }, []);
 
 
-    function loginRequest(token, passWord) {
-        const decoded = jwtDecode(token)
+    function loginRequest(token, userName) {
+        localStorage.setItem("token", token);
+        const decoded = jwtDecode(token);
+        console.log(decoded);
 
-        setIsAuth((isAuth) => ({
-            ...isAuth,
-            isAuth: true,
-            user: {...isAuth.user, username: decoded.sub, password: passWord, token: token}
-        }));
-        localStorage.setItem("token", token)
-
-        void fetchUserData(decoded, token)
+        void fetchUserData(userName, token, true);
     }
 
-    async function fetchUserData(decoded, token) {
-        const id = decoded.sub
+    async function fetchUserData(userName, token, redirect) {
         try {
-            const response = await axios.get(`https://api.datavortex.nl/fiveecenter/users/${id}`, {
+            const response = await axios.get(`https://api.datavortex.nl/fiveecenter/users/${userName}`, {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
                 }
             })
             setIsAuth({
-                isAuth: true, user: {
+                isAuthenticated: true,
+                user: {
                     username: response.data.username,
                     email: response.data.email,
                     id: response.data.id,
                 },
                 status: "done",
-            })
+            });
+
+            if(redirect) {
+                navigate("/user");
+            }
 
         } catch (e) {
-            console.error(e)
+            console.error(e);
+            setIsAuth({
+                isAuthenticated: false,
+                user:"",
+                status: "done",
+            })
         }
 
     }
 
     useEffect(() => {
-    }, [isAuth]);
+    }, [isAuth.isAuthenticated]);
 
     function logOut() {
         setIsAuth({
-            isAuth: false,
+            isAuthenticated: false,
             user: "",
             status: "done",
         })
         localStorage.removeItem("token")
+        localStorage.removeItem("userName")
         navigate('/login')
     }
 

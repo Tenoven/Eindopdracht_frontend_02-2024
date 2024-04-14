@@ -50,14 +50,16 @@
         margin: 0;
         size: A4;
     }
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
 
     .printBackground {
-        width: 100%;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .characterDetails {
+        max-width: 100vw;
     }
 
 }

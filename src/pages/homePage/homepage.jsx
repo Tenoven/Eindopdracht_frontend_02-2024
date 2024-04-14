@@ -38,6 +38,7 @@ function HomePage() {
                                 Sadly creating a character sheet can be really though.
                                 Use D&D 5E centre’s build-in character creator to make it a breeze!
                             </p>
+                            <p><u>You do need to be logged in for this!</u></p>
                         </section>
                             </Link>
                     </div>
