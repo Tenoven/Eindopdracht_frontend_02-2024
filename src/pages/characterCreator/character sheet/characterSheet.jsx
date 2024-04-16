@@ -11,18 +11,20 @@ function CharacterSheet() {
     const token = localStorage.getItem("token")
     const decoded = jwtDecode(token)
     const username = decoded.sub
-    const [userData, setUserData] = useState({})
     const [oldInfo, setOldInfo] = useState([])
-    const [newInfo, setNewInfo] = useState([])
+    // const [newInfo, setNewInfo] = useState([])
     const formState= LocalToStateObject()
-    console.log(formState)
-    console.log("decoded:" +jwtDecode(token))
+    // console.log(formState)
+    // console.log("decoded:" +jwtDecode(token))
 
     useEffect(() => {
         void apiGetInfo()
-        void oldInfoPlusNewInfo()
-        void postToApi()
     }, []);
+
+    useEffect(() => {
+        void postToApi()
+    }, [formState]);
+
 
     async function apiGetInfo() {
         try {
@@ -32,41 +34,32 @@ function CharacterSheet() {
                     Authorization: `Bearer ${token}`,
                 }
             })
-            setUserData (response.data)
-            setOldInfo (response.data.info)
-            console.log(response.data)
+            setOldInfo (JSON.parse(response.data.info) )
         } catch (error) {
             console.error('Error:', error);
         }
     }
 
-    function oldInfoPlusNewInfo() {
-        setNewInfo({
-            ...oldInfo,
-            formState
-        })
-    }
-
     async function postToApi() {
         try {
             const result = await axios.put(`https://api.datavortex.nl/fiveecenter/users/${username}`, {
-                "name": userData.username,
-                "email": userData.email,
-                "password": userData.password,
-                "info": newInfo
+                "info": JSON.stringify(formState)
             },{
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
                 }
             });
+            // console.log(result)
         } catch (error) {
             console.error('Error:', error);
         }
     }
 
     return (
+
             <div className="emptyBackground">
+                <button type="button" onClick={apiGetInfo}>test info</button>
                 <h1 className="excludePrint">Dungeons & Dragons Character Sheet</h1>
                 <div className="printBackground">
 

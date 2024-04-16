@@ -18,7 +18,7 @@ function SearchBar() {
 
         function handleSubmit(e) {
             e.preventDefault()
-            console.log(formState)
+            // console.log(formState)
         }
 
     return (

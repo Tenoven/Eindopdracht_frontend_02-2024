@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function LocalToStateObject() {
-    const [formState, setFormstate] = useState({
+    const baseForm = {
         name: "",
         age: "",
         height: "",
@@ -18,18 +18,18 @@ function LocalToStateObject() {
         race: "",
         class: "",
         background: "",
-    });
+    };
+
+    const [formState, setFormstate] = useState([]);
 
     useEffect(() => {
         const populateFormStateFromLocalStorage = () => {
             setFormstate(prevFormState => {
                 const updatedFormState = { ...prevFormState };
-                for (const key in updatedFormState) {
+                for (const key in baseForm) {
                     const storedValue = JSON.parse(localStorage.getItem(key));
+                    updatedFormState[key] = storedValue;
 
-                    if (storedValue !== null) {
-                        updatedFormState[key] = storedValue;
-                    }
                 }
 
                 return updatedFormState;

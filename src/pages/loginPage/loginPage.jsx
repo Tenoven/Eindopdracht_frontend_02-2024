@@ -31,14 +31,14 @@ function LoginPage(props) {
     }
 
     async function postLogIn() {
-        console.log(loginState)
+        // console.log(loginState)
         try {
             const response = await axios.post(
                 `https://api.datavortex.nl/fiveecenter/users/authenticate`, {
                     "username": loginState.userName,
                     "password": loginState.passWord,
                 })
-            console.log(response.data);
+            // console.log(response.data);
             loginRequest(response.data.jwt, loginState.userName);
 
         } catch (e) {

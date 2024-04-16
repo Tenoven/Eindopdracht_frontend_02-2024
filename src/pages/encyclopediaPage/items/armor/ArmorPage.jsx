@@ -14,7 +14,7 @@ function ArmorPage() {
         async function apiGetInfo() {
             try {
                 const response = await axios.get(apiLink);
-                console.log("on mount:", response.data)
+                // console.log("on mount:", response.data)
                 setApiData(response.data)
             } catch (error) {
                 console.error('Error:', error);
@@ -46,7 +46,7 @@ function ArmorPage() {
                 </div>
 
                 <div className="feat-container">
-                    {console.log("apidata in return", apiData)}
+                    {/*{console.log("apidata in return", apiData)}*/}
                     {apiData.count > 0 ? (
                         apiData.results.map((dat, index) => (
                             <ArmorComponent key={index} data={dat}/>

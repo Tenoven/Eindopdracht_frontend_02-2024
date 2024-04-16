@@ -41,7 +41,7 @@ const AuthContextProvider = ({children}) => {
     function loginRequest(token, userName) {
         localStorage.setItem("token", token);
         const decoded = jwtDecode(token);
-        console.log(decoded);
+        // console.log(decoded);
 
         void fetchUserData(userName, token, true);
     }
