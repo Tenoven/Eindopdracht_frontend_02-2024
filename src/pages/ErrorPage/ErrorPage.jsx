@@ -7,7 +7,7 @@ function ErrorPage(props) {
         try {
             const response = await axios.get('https://api.datavortex.nl/fiveecenter/info');
 
-            console.log(response)
+            // console.log(response)
 
         } catch (error) {
             console.error('Error:', error);

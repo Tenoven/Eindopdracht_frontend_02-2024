@@ -14,7 +14,7 @@ function SpellPage() {
         async function apiGetInfo() {
             try {
                 const response = await axios.get(apiLink);
-                console.log("on mount:", response.data)
+                // console.log("on mount:", response.data)
                 setApiData(response.data)
             } catch (error) {
                 console.error('Error:', error);

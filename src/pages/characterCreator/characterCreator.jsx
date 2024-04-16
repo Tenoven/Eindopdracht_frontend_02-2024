@@ -40,8 +40,6 @@ function CharacterCreator() {
         race: "",
         class: "",
         background: "",
-
-
     })
 
     let standardArray = [15, 14, 13, 12, 10, 8]
@@ -56,7 +54,7 @@ function CharacterCreator() {
         async function apiGetRaceInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/races/?format=json");
-                console.log("race", response.data.results)
+                // console.log("race", response.data.results)
                 setApiRaceData(response.data.results);
             } catch (error) {
                 console.error('Error:', error);
@@ -66,7 +64,7 @@ function CharacterCreator() {
         async function apiGetClassInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/classes/?format=json");
-                console.log("class", response.data.results)
+                // console.log("class", response.data.results)
                 setApiClassData(response.data.results);
             } catch (error) {
                 console.error('Error:', error);
@@ -76,7 +74,7 @@ function CharacterCreator() {
         async function apiGetBackgroundInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/backgrounds/?format=json");
-                console.log('background', response.data.results)
+                // console.log('background', response.data.results)
                 setApiBackgroundData(response.data.results);
             } catch (error) {
                 console.error('Error:', error);
@@ -108,6 +106,7 @@ function CharacterCreator() {
         }))
 
         localStorage.setItem(changedFieldName, JSON.stringify(newValue));
+        // console.log(formState)
 
     }
 
@@ -242,7 +241,7 @@ function CharacterCreator() {
                     </article>
                     <article className="buttons">
                         <Button type="button" onClick={ClearCharacterForm} className="yellow">Clear form</Button>
-                        <NavLink to="/charactercreator/charactersheet" className="navButton" > Create character</NavLink>
+                        <NavLink to="/charactercreator/charactersheet" className="navButton"> Create character</NavLink>
                     </article>
                 </main>
             </BasicDragonBackground>

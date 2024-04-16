@@ -1,24 +1,13 @@
 import "./header.css"
 import {NavLink} from "react-router-dom";
-import {useContext, useEffect, useState} from "react";
+import {useContext, useEffect} from "react";
 import Button from "../buttons/button.jsx";
 import {AuthContext} from "../../context/authContext/AuthContext.jsx";
 
 function Header() {
     const active =({ isActive }) => isActive ? 'active-menu-link' : 'default-menu-link';
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
-    const {logOut} = useContext(AuthContext)
+    const {logOut, isAuthenticated} = useContext(AuthContext)
 
-    useEffect(() => {
-        console.log(logOut)
-        const checkLoggedIn = () => {
-            if (localStorage.getItem("token")) {
-                setIsLoggedIn(true);
-            }
-        };
-
-        checkLoggedIn(isLoggedIn);
-    }, [isLoggedIn]);
     return (
         <>
             <header>
@@ -31,10 +20,10 @@ function Header() {
                     <NavLink to="/" className={active} > Homepage </NavLink>
 
                     {
-                        localStorage.getItem("token") ? (
+                        isAuthenticated ? (
                             <div className="profileButtons">
-                                <NavLink to="/profile" className={active}>Profile</NavLink>
-                                <Button type="button" onClick={logOut}>LogOut</Button>
+                                <NavLink to="/profile" className={`${active} position`}>Profile</NavLink>
+                                <Button type="button" className="yellow" onClick={logOut}>LogOut</Button>
                             </div>
                         ) : (
                             <div className="loginButtons">

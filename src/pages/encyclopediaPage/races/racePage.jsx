@@ -11,7 +11,7 @@ function RacePage() {
         async function apiGetRaceInfo() {
             try {
                 const response = await axios.get("https://api.open5e.com/v1/races/?format=json");
-                console.log("apiData in fetch",response.data.results)
+                // console.log("apiData in fetch",response.data.results)
                 setApiRaceData(response.data.results)
             } catch (error) {
                 console.error('Error:', error);
@@ -25,7 +25,7 @@ function RacePage() {
             <main >
                 <h1>Races</h1>
                 <div className="race-container">
-                    {console.log("apiData in return", apiRaceData)}
+                    {/*{console.log("apiData in return", apiRaceData)}*/}
                     {apiRaceData.length > 0 ? (
                         apiRaceData.map((dat, index) => (
                             <RaceComponent key={index} data={dat}/>

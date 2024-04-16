@@ -1,11 +1,65 @@
 import StatBlock from "../../../components/statBlock/statBlock.jsx";
 import "./CharacterSheet.css"
 import statTooModifier from "../../../../src/Helpers/statTooModifier.js";
+import LocalToStateObject from "../../../Helpers/LocalToStateObject.js";
+import {useEffect, useState} from "react";
+import axios from "axios";
+import {jwtDecode} from "jwt-decode";
 
 
 function CharacterSheet() {
+    const token = localStorage.getItem("token")
+    const decoded = jwtDecode(token)
+    const username = decoded.sub
+    const [oldInfo, setOldInfo] = useState([])
+    // const [newInfo, setNewInfo] = useState([])
+    const formState= LocalToStateObject()
+    // console.log(formState)
+    // console.log("decoded:" +jwtDecode(token))
+
+    useEffect(() => {
+        void apiGetInfo()
+    }, []);
+
+    useEffect(() => {
+        void postToApi()
+    }, [formState]);
+
+
+    async function apiGetInfo() {
+        try {
+            const response = await axios.get(`https://api.datavortex.nl/fiveecenter/users/${username}`, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                }
+            })
+            setOldInfo (JSON.parse(response.data.info) )
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    async function postToApi() {
+        try {
+            const result = await axios.put(`https://api.datavortex.nl/fiveecenter/users/${username}`, {
+                "info": JSON.stringify(formState)
+            },{
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                }
+            });
+            // console.log(result)
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
     return (
+
             <div className="emptyBackground">
+                <button type="button" onClick={apiGetInfo}>test info</button>
                 <h1 className="excludePrint">Dungeons & Dragons Character Sheet</h1>
                 <div className="printBackground">
 
@@ -124,7 +178,6 @@ function CharacterSheet() {
                                 <p>{statTooModifier(JSON.parse(localStorage.getItem("WIS")))}</p>
                             </div>
                         </div>
-
                     </fieldset>
 
                 </div>

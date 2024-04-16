@@ -14,7 +14,7 @@ function MonsterPage() {
         async function apiGetInfo() {
             try {
                 const response = await axios.get(apiLink);
-                console.log(response.data)
+                // console.log(response.data)
                 setApiData(response.data)
             } catch (error) {
                 console.error('Error:', error);
