@@ -1,0 +1,9 @@
+.mainVisual {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+NavLink {
+    margin-top: 8px;
+}

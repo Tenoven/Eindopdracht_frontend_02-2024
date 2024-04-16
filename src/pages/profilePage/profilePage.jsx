@@ -1,14 +1,18 @@
-import {useContext, useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
+import "./profilePage.css"
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import axios from "axios";
-import {AuthContext} from "../../context/authContext/AuthContext.jsx";
 import {jwtDecode} from "jwt-decode";
+import {NavLink} from "react-router-dom";
 
 function ProfilePage() {
+
     const [userData, setUserData] = useState({})
+    const [characterData, setCharacterData] = useState({})
     const token = localStorage.getItem("token")
     const decoded = jwtDecode(token)
     const username = decoded.sub
+
 
     useEffect(() => {
         async function apiGetInfo() {
@@ -20,7 +24,7 @@ function ProfilePage() {
                 }
                 })
                 setUserData (response.data)
-                // console.log(response.data)
+                setCharacterData( JSON.parse(response.data.info))
             } catch (error) {
                 console.error('Error:', error);
             }
@@ -28,19 +32,33 @@ function ProfilePage() {
         void apiGetInfo()
     }, [])
 
+
+
     return (
         <>
             <BasicDragonBackground>
-                <section>
-                    <h2>Welcome {userData.username}</h2>
-                    <p>The email adres known to us is: {userData.email}</p>
-                </section>
+                <main className="mainVisual">
+                    <section>
+                        <h2>Welcome {userData.username}</h2>
+                        <p>The email adres known to us is: {userData.email}</p>
+                    </section>
 
-                <section>
-                    <h3>Your characters:</h3>
+                    <section>
+                        <h3>Your character:</h3>
+                        {characterData ? (
+                            <article>
+                                <h3>{characterData.name}</h3>
+                                <p>{characterData.race}</p>
+                                <p>{characterData.class}</p>
+                                <p>{characterData.background}</p>
+                                <NavLink to={"/profile/charactersheet"} className="yellow">Go to character sheet</NavLink>
+                            </article>
+                        ) : (
+                            <p>Find your character here when you have made one!</p>
+                        )}
+                    </section>
 
-                </section>
-
+                </main>
             </BasicDragonBackground>
         </>
     );

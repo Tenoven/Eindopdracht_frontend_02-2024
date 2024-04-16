@@ -22,7 +22,7 @@ function Header() {
                     {
                         isAuthenticated ? (
                             <div className="profileButtons">
-                                <NavLink to="/user" className={`${active} position`}>Profile</NavLink>
+                                <NavLink to="/profile" className={`${active} position`}>Profile</NavLink>
                                 <Button type="button" className="yellow" onClick={logOut}>LogOut</Button>
                             </div>
                         ) : (

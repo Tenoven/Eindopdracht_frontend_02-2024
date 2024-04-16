@@ -65,7 +65,7 @@ const AuthContextProvider = ({children}) => {
             });
 
             if(redirect) {
-                navigate("/user");
+                navigate("/profile");
             }
 
         } catch (e) {

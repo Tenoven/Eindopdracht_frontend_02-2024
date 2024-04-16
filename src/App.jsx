@@ -21,6 +21,7 @@ import MagicItemPage from "./pages/encyclopediaPage/items/MagicitemsPage/MagicIt
 import RacePage from "./pages/encyclopediaPage/races/racePage.jsx";
 import CharacterSheet from "./pages/characterCreator/character sheet/characterSheet.jsx";
 import ProfilePage from "./pages/profilePage/profilePage.jsx";
+import ProfileCharacterSheet from "./pages/profilePage/charactersheet/ProfilecharacterSheet.jsx"
 import {AuthContext} from "./context/authContext/AuthContext.jsx";
 import {useContext} from "react";
 
@@ -40,7 +41,8 @@ function App() {
 
               <Route path="/login" element={<LoginPage/>} />
               <Route path="/register" element={<RegisterPage/>} />
-              <Route path="/user" element={isAuthenticated ? <ProfilePage/> : <Navigate to={"/login"}/>}/>
+              <Route path="/profile" element={isAuthenticated ? <ProfilePage/> : <Navigate to={"/login"}/>}/>
+                <Route path="/profile/charactersheet" element={isAuthenticated ? <ProfileCharacterSheet/> : <Navigate to={"/login"}/>} />
 
               <Route path="/encyclopedia" element={<EncyclopediaPage/>} />
                 <Route path="/encyclopedia/races" element={<RacePage/>} />
@@ -57,7 +59,6 @@ function App() {
               <Route path="/charactercreator" element={isAuthenticated ? <CharacterCreator/> : <Navigate to={"/login"}/> } />
                 <Route path="/charactercreator/charactersheet" element={isAuthenticated ? <CharacterSheet/> : <Navigate to={"/login"}/>}/>
 
-              {/*<Route path="/" element={} />*/}
             </Routes>
         </div>
           <Footer></Footer>
