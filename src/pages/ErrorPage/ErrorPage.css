@@ -1,0 +1,10 @@
+.errorPage {
+    display: flex;
+    flex-direction: column;
+    min-width: 60vw;
+    gap: 8px;
+    align-items: center;
+}
+.smallWidth {
+    max-width: 130px;
+}

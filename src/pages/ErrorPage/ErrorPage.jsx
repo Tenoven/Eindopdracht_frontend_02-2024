@@ -1,23 +1,18 @@
-import React from 'react';
-import axios from "axios";
+import "./ErrorPage.css"
+import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
+import {NavLink} from "react-router-dom";
 
-function ErrorPage(props) {
-
-    async function loginRequest() {
-        try {
-            const response = await axios.get('https://api.datavortex.nl/fiveecenter/info');
-
-            // console.log(response)
-
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    }
+function ErrorPage() {
 
     return (
         <>
-            <div>error pagina</div>
-            <button type="button" onClick={() => {loginRequest()}}>test</button>
+            <BasicDragonBackground>
+                <main className="errorPage">
+                    <h2>An error has occurt;</h2>
+                    <p>Please navigate to the homescreen with button underneath:</p>
+                    <NavLink to="/home" className="yellow smallWidth">Go to home</NavLink>
+                </main>
+            </BasicDragonBackground>
         </>
     );
 }
