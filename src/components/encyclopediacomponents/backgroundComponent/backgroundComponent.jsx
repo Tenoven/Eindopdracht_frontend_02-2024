@@ -1,14 +1,22 @@
-import {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import ReactMarkdown from "react-markdown";
 import "./backgroundComponent.css"
 import Button from "../../buttons/button.jsx";
+import {useNavigate} from "react-router-dom";
+import  {AuthContext} from "../../../context/authContext/AuthContext.jsx";
 
 function BackgroundComponent(props) {
 
     const [showMore, setShowMore] = useState(false);
     const apiData = props.data
     const button = props.button
+    const navigate = useNavigate()
+    const {isAuthenticated} = useContext(AuthContext)
 
+    function setLocalStorage() {
+        localStorage.setItem("background" , JSON.stringify(apiData.name))
+        navigate("/charactercreator")
+    }
     return (
         <div className="backGroundCard">
             {button ? (
@@ -30,6 +38,7 @@ function BackgroundComponent(props) {
                         <h3>suggested characteristics</h3>
                         <ReactMarkdown>{apiData.suggested_characteristics}</ReactMarkdown>
 
+                        {isAuthenticated && ( <Button className="yellow" onClick={setLocalStorage}>Use in character sheet builder</Button>)}
                         <Button className="yellow" onClick={() => setShowMore(false)}>Show less</Button>
                     </>
                 ) : (

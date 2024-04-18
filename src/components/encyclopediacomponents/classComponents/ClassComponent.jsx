@@ -1,12 +1,21 @@
 import "./ClassComponent.css";
-import { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import ReactMarkdown from 'react-markdown';
 import Button from "../../buttons/button.jsx";
+import {AuthContext} from "../../../context/authContext/AuthContext.jsx";
+import {useNavigate} from "react-router-dom";
 
 function ClassComponent(props) {
     const [showMore, setShowMore] = useState(false);
     const apiData = props.data
     const button = props.button
+    const {isAuthenticated} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    function setLocalStorage() {
+        localStorage.setItem("class" , JSON.stringify(apiData.name))
+        navigate("/charactercreator")
+    }
 
     return (
         <div className="classCard">
@@ -30,6 +39,8 @@ function ClassComponent(props) {
                         <pre className="classTable">{apiData.table}</pre>
                         <h3>Class details:</h3>
                         <ReactMarkdown className="descriptionSection">{apiData.desc}</ReactMarkdown>
+
+                        {isAuthenticated && ( <Button className="yellow" onClick={setLocalStorage}>Use in character sheet builder</Button>)}
                         <Button className="yellow" onClick={() => setShowMore(false)}>Show less</Button>
                     </>
                 ) : (

@@ -3,8 +3,8 @@ import axios from "axios";
 import BasicDragonBackground from "../../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import "./ArmorPage.css"
 import Button from "../../../../components/buttons/button.jsx";
-import ItemComponent from "../../../../components/encyclopediacomponents/ItemTile/ItemComponent.jsx";
-import ArmorComponent from "../../../../components/encyclopediacomponents/ItemTile/armorComponent.jsx";
+import ItemComponent from "../../../../components/encyclopediacomponents/Itemcomponents/ItemComponent.jsx";
+import ArmorComponent from "../../../../components/encyclopediacomponents/Itemcomponents/armorComponent.jsx";
 
 function ArmorPage() {
     const [apiData, setApiData] = useState({})

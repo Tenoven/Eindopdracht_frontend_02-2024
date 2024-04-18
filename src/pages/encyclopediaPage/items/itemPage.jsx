@@ -1,5 +1,5 @@
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
-import EncyclopediaTile from "../../../components/encyclopediacomponents/ecyclopediaTile/encyclopediaTile.jsx";
+import EncyclopediaTile from "../../../components/encyclopediacomponents/encyclopediaComponent/encyclopediaTile.jsx";
 import magicItemIMG from "../../../assets/subclasses.png"
 import "./itemPage.css"
 

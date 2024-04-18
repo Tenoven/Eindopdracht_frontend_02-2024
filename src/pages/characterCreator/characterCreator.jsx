@@ -6,7 +6,7 @@ import BasicDragonBackground from "../../components/backgrounds/basicDragon/basi
 import {statCalculator} from "../../Helpers/stat-roller/statDiceRoller.js";
 import Button from "../../components/buttons/button.jsx";
 import axios from "axios";
-import RaceComponent from "../../components/encyclopediacomponents/race tile/RaceTile.jsx";
+import RaceComponent from "../../components/encyclopediacomponents/race component/RaceComponent.jsx";
 import ClassComponent from "../../components/encyclopediacomponents/classComponents/ClassComponent.jsx";
 import BackgroundComponent from "../../components/encyclopediacomponents/backgroundComponent/backgroundComponent.jsx";
 import {ClearCharacterForm} from "../../Helpers/ClearCharacterForm.js";

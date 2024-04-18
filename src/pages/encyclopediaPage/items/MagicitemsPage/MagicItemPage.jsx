@@ -3,7 +3,7 @@ import axios from "axios";
 import BasicDragonBackground from "../../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import "./MagicItemPage.css"
 import Button from "../../../../components/buttons/button.jsx";
-import ItemComponent from "../../../../components/encyclopediacomponents/ItemTile/ItemComponent.jsx";
+import ItemComponent from "../../../../components/encyclopediacomponents/Itemcomponents/ItemComponent.jsx";
 
 function MagicItemPage() {
     const [apiData, setApiData] = useState({})

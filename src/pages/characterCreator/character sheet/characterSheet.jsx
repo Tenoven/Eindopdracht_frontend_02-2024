@@ -8,7 +8,7 @@ import {jwtDecode} from "jwt-decode";
 import BackgroundComponent
     from "../../../components/encyclopediacomponents/backgroundComponent/backgroundComponent.jsx";
 import ClassComponent from "../../../components/encyclopediacomponents/classComponents/ClassComponent.jsx";
-import RaceComponent from "../../../components/encyclopediacomponents/race tile/RaceTile.jsx";
+import RaceComponent from "../../../components/encyclopediacomponents/race component/RaceComponent.jsx";
 
 
 function CharacterSheet() {

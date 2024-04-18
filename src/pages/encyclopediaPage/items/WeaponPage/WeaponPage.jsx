@@ -3,8 +3,8 @@ import axios from "axios";
 import BasicDragonBackground from "../../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import "./WeaponPage.css"
 import Button from "../../../../components/buttons/button.jsx";
-import ItemComponent from "../../../../components/encyclopediacomponents/ItemTile/ItemComponent.jsx";
-import WeaponComponent from "../../../../components/encyclopediacomponents/ItemTile/weaponComponent.jsx";
+import ItemComponent from "../../../../components/encyclopediacomponents/Itemcomponents/ItemComponent.jsx";
+import WeaponComponent from "../../../../components/encyclopediacomponents/Itemcomponents/weaponComponent.jsx";
 
 function WeaponPage() {
     const [apiData, setApiData] = useState({})
