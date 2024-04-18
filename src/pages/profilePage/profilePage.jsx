@@ -38,7 +38,7 @@ function ProfilePage() {
         <>
             <BasicDragonBackground>
                 <main className="mainVisual">
-                    <section>
+                    <section className="generalUserData">
                         <h2>Welcome {userData.username}</h2>
                         <p>The email adres known to us is: {userData.email}</p>
                     </section>
@@ -46,7 +46,7 @@ function ProfilePage() {
                     <section>
                         <h3>Your character:</h3>
                         {characterData ? (
-                            <article>
+                            <article className="characterProfileDetails">
                                 <h3>{characterData.name}</h3>
                                 <p>{characterData.race}</p>
                                 <p>{characterData.class}</p>

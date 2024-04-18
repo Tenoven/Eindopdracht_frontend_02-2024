@@ -8,7 +8,6 @@ import RegisterPage from "./pages/registerPage/registerPage.jsx";
 import CharacterCreator from "./pages/characterCreator/characterCreator.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
 import EncyclopediaPage from "./pages/encyclopediaPage/encyclopediaPage.jsx";
-import SearchBar from "./components/SearchBar/searchBar.jsx";
 import BackgroundPage from "./pages/encyclopediaPage/backgrounds/BackgroundPage.jsx";
 import ClassesPage from "./pages/encyclopediaPage/classes/ClassesPage.jsx";
 import FeatsPage from "./pages/encyclopediaPage/feats/FeatsPage.jsx";

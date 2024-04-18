@@ -1,0 +1,12 @@
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    min-width: 60vw;
+    align-items: center;
+}
+
+.loginForm > form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

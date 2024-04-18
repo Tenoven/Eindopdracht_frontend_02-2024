@@ -50,23 +50,25 @@ function LoginPage(props) {
     return (
         <>
             <BasicDragonBackground>
-                <div>
-                    <h1>Login</h1>
-                    <p>welcome! Please log in</p>
-                </div>
+                <section className="loginForm">
+                    <div>
+                        <h1>Login</h1>
+                        <p>welcome! Please log in</p>
+                    </div>
 
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="">username:</label>
-                        <input type="text" onChange={handleChange} name="userName"/>
-                    </div>
-                    
-                    <div>
-                        <label htmlFor="">Password:</label>
-                        <input type="password" onChange={handleChange} name="passWord"/>
-                    </div>
-                    <Button type="submit" className="yellow" >Submit login</Button>
-                </form>
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <label htmlFor="">username:</label>
+                            <input type="text" onChange={handleChange} name="userName"/>
+                        </div>
+
+                        <div>
+                            <label htmlFor="">Password:</label>
+                            <input type="password" onChange={handleChange} name="passWord"/>
+                        </div>
+                        <Button type="submit" className="yellow" >Submit login</Button>
+                    </form>
+                </section>
             </BasicDragonBackground>
         </>
     );
