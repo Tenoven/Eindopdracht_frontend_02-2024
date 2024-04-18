@@ -203,7 +203,7 @@ function CharacterCreator() {
                             </select>
                             {
                                 localStorage.getItem("race") && Object.keys(apiRaceData).length > 0 &&
-                                <RaceComponent data={apiRaceData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("race"))))[0]}/>
+                                <RaceComponent button="true" data={apiRaceData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("race"))))[0]}/>
                             }
                         </form>
                     </article>
@@ -219,7 +219,7 @@ function CharacterCreator() {
                             </select>
                             {
                                 localStorage.getItem("class") && Object.keys(apiClassData).length > 0 &&
-                                <ClassComponent data={apiClassData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("class"))))[0]}/>
+                                <ClassComponent button="true" data={apiClassData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("class"))))[0]}/>
                             }
                         </form>
                     </article>
@@ -235,7 +235,7 @@ function CharacterCreator() {
                             </select>
                             {
                                 localStorage.getItem("background") && Object.keys(apiBackgroundData).length > 0 &&
-                                <BackgroundComponent data={apiBackgroundData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("background"))))[0]}/>
+                                <BackgroundComponent button="true" data={apiBackgroundData.filter(item => item.name.includes(JSON.parse(localStorage.getItem("background"))))[0]}/>
                             }
                         </form>
                     </article>

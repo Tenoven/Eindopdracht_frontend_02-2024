@@ -32,7 +32,6 @@ function App() {
   return (
     <>
         <Header></Header>
-        <SearchBar></SearchBar>
         <div className="appBody">
             <Routes>
               <Route path="/" element={<HomePage/>} />

@@ -25,10 +25,9 @@ function RacePage() {
             <main >
                 <h1>Races</h1>
                 <div className="race-container">
-                    {/*{console.log("apiData in return", apiRaceData)}*/}
                     {apiRaceData.length > 0 ? (
                         apiRaceData.map((dat, index) => (
-                            <RaceComponent key={index} data={dat}/>
+                            <RaceComponent key={index} data={dat} button="true"/>
                         ))
                     ) : (
                         <p>Loading...</p>
