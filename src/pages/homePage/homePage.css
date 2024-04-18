@@ -28,10 +28,6 @@ ul {
     color: white;
 }
 
-section > .sectionCards {
-    font-size: 24px;
-}
-
 .sectionCards {
     display: flex;
     justify-content: space-around;
@@ -39,6 +35,8 @@ section > .sectionCards {
 }
 
 .card {
+    display: flex;
+    font-size: 24px;
     background-color: #35061B;
     align-content: center;
     text-align: center;
