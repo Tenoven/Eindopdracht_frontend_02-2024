@@ -7,9 +7,11 @@ function BackgroundComponent(props) {
 
     const [showMore, setShowMore] = useState(false);
     const apiData = props.data
+    const button = props.button
 
     return (
         <div className="backGroundCard">
+            {button ? (
             <fieldset className="boxes">
                 <h2>{apiData.name}</h2>
                 {showMore ? (
@@ -36,6 +38,25 @@ function BackgroundComponent(props) {
                     </>
                 )}
             </fieldset>
+
+            ) : (
+                <fieldset>
+                    <h2>{apiData.name}</h2>
+                    <h3>Description:</h3>
+                    <ReactMarkdown>{apiData.desc}</ReactMarkdown>
+                    <h3>Proficiencies:</h3>
+                    <ReactMarkdown>{apiData.skill_proficiencies}</ReactMarkdown>
+                    <h3>Equipment:</h3>
+                    <ReactMarkdown>{apiData.equipment}</ReactMarkdown>
+                    <h3>Features:</h3>
+                    <ReactMarkdown>{apiData.feature}</ReactMarkdown>
+                    <ReactMarkdown>{apiData.feature_desc}</ReactMarkdown>
+                    <h3>Languages:</h3>
+                    <ReactMarkdown>{apiData.languages}</ReactMarkdown>
+                    <h3>suggested characteristics</h3>
+                    <ReactMarkdown>{apiData.suggested_characteristics}</ReactMarkdown>
+                </fieldset>
+            )}
         </div>
     );
 }

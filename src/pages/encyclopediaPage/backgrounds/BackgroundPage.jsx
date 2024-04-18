@@ -25,10 +25,9 @@ function BackgroundPage() {
             <main >
                 <h1>Backgrounds</h1>
                 <div className="background-container">
-                    {/*{console.log("apidata in return", apiData)}*/}
                     {apiData.length > 0 ? (
                         apiData.map((dat, index) => (
-                            <BackgroundComponent key={index} data={dat}/>
+                            <BackgroundComponent button="true" key={index} data={dat}/>
                         ))
                     ) : (
                         <p>Loading...</p>

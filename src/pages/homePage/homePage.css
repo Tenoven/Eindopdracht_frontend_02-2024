@@ -28,7 +28,7 @@ ul {
     color: white;
 }
 
-section {
+section > .sectionCards {
     font-size: 24px;
 }
 

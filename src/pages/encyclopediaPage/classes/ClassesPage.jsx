@@ -29,7 +29,7 @@ function ClassesPage() {
                     {/*{console.log("apidata in return", apiClassData)}*/}
                     {apiClassData.length > 0 ? (
                         apiClassData.map((dat, index) => (
-                                <ClassComponent key={index} data={dat}/>
+                                <ClassComponent key={index} data={dat} button="true"/>
                         ))
                     ) : (
                         <p>Loading...</p>
