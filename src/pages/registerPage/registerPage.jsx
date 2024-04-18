@@ -54,23 +54,25 @@ function RegisterPage() {
     return (
         <>
             <BasicDragonBackground>
-                <p>Register</p>
-                <form onSubmit={onSubmit}>
-                    <div>
-                        <label htmlFor="">Name:</label>
-                        <input type="text" name="name" onChange={handleChange}/>
-                    </div>
-                    <div>
-                        <label htmlFor="">Email:</label>
-                        <input type="email" name="email" onChange={handleChange}/>
-                    </div>
+                <section className="registerForm">
+                    <h1>Register</h1>
+                    <form onSubmit={onSubmit}>
+                        <div>
+                            <label htmlFor="">Name:</label>
+                            <input type="text" name="name" onChange={handleChange}/>
+                        </div>
+                        <div>
+                            <label htmlFor="">Email:</label>
+                            <input type="email" name="email" onChange={handleChange}/>
+                        </div>
 
-                    <div>
-                        <label htmlFor="">Password:</label>
-                        <input type="password" name="password" onChange={handleChange}/>
-                    </div>
-                <Button type="submit" className="yellow">Submit login</Button>
-            </form>
+                        <div>
+                            <label htmlFor="">Password:</label>
+                            <input type="password" name="password" onChange={handleChange}/>
+                        </div>
+                    <Button type="submit" className="yellow">Submit registration</Button>
+                    </form>
+                </section>
             </BasicDragonBackground>
         </>
     );

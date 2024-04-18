@@ -92,7 +92,6 @@
 
 @media print {
     header,
-    .searchbar,
     footer,
     .excludePrint {
         display: none;
