@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    min-height: 85vh;
+    min-height: 90vh;
     max-width: 60vw;
     margin-bottom: 24px;
 }
