@@ -1,10 +1,15 @@
-import React from 'react';
+///// imports /////
 import dragon from "../../../assets/dragon.png";
 import flippedDragon from "../../../assets/dragon-flipped.png"
 import "../basicDragon/basicDragonBackground.css"
 
-
+///// main function /////
 function BasicDragonBackground(props) {
+    ///// constants /////
+
+    ///// functions /////
+
+    ///// return /////
     return (
         <div className={"background"}>
             <div className={"imageLeft"}>

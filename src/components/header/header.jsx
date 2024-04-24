@@ -1,13 +1,20 @@
+///// imports /////
+
 import "./header.css"
 import {NavLink} from "react-router-dom";
-import {useContext, useEffect} from "react";
+import {useContext} from "react";
 import Button from "../buttons/button.jsx";
 import {AuthContext} from "../../context/authContext/AuthContext.jsx";
 
+///// main function /////
 function Header() {
+///// constants /////
     const active =({ isActive }) => isActive ? 'active-menu-link' : 'default-menu-link';
     const {logOut, isAuthenticated} = useContext(AuthContext)
 
+///// functions /////
+
+///// return /////
     return (
         <>
             <header>

@@ -1,6 +1,13 @@
+///// imports /////
 import "./button.css"
 
+///// main function /////
 function Button(props) {
+///// constants /////
+
+///// functions /////
+
+///// return /////
     return (
         <button
             type={props.type}

@@ -1,10 +1,15 @@
+///// imports /////
+
 import {useEffect, useState} from 'react';
 import "./statBlock.css"
 
+///// main function /////
 function StatBlock(props) {
+///// constants /////
 
     const [statComponent, setStatComponent] = useState(null)
 
+///// functions /////
     useEffect(() => {
         switch (props.generation) {
             case "standardArray":
@@ -39,7 +44,7 @@ function StatBlock(props) {
                                 </select>
                             </div>);
                 break;
-                
+
             case "filled":
                 setStatComponent(
                     <div className="underside">
@@ -50,6 +55,7 @@ function StatBlock(props) {
     }, [props.generation, props.value, props.statArray]);
 
 
+///// return /////
     return (
         <>
             <div className="statCard">

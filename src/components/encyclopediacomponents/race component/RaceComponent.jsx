@@ -1,24 +1,29 @@
-import React, {useContext, useState} from 'react';
+///// imports /////
+
+import {useContext, useState} from 'react';
 import "./RaceComponent.css"
 import ReactMarkdown from "react-markdown";
 import Button from "../../buttons/button.jsx";
 import {useNavigate} from "react-router-dom";
 import {AuthContext} from "../../../context/authContext/AuthContext.jsx";
 
+///// main function /////
 function RaceComponent(props) {
 
+///// constants /////
     const [showMore, setShowMore] = useState(false);
     const apiData = props.data
     const button = props.button
     const navigate = useNavigate()
     const {isAuthenticated} = useContext(AuthContext)
 
-    function setLocalStorage(e) {
-        e.preventDefault()
+///// functions /////
+    function setLocalStorage() {
         localStorage.setItem("race" , JSON.stringify(apiData.name))
         navigate("/charactercreator")
     }
 
+///// return /////
     return (
         <div>
             {button ? (
@@ -36,7 +41,7 @@ function RaceComponent(props) {
                         <ReactMarkdown>{apiData.traits}</ReactMarkdown>
                         <ReactMarkdown>{apiData.vision}</ReactMarkdown>
 
-                        {isAuthenticated && ( <Button className="yellow" onClick={()=>setLocalStorage}>Use in character sheet builder</Button>)}
+                        {isAuthenticated && ( <Button className="yellow" onClick={setLocalStorage}>Use in character sheet builder</Button>)}
                         <Button className="yellow" onClick={() => setShowMore(false)}>Show less</Button>
                     </>
                 ) : (

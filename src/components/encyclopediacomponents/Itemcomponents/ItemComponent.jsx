@@ -1,12 +1,17 @@
+///// imports /////
 import {useState} from "react";
 import ReactMarkdown from "react-markdown";
 import Button from "../../buttons/button.jsx";
 
+///// main function /////
 function ItemComponent(props) {
-
+///// constants /////
     const [showMore, setShowMore] = useState(false);
     const apiData = props.data
 
+///// functions /////
+
+///// return /////
     return (
         <div className="magicCard">
             <fieldset className="boxes">

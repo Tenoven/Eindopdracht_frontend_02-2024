@@ -1,10 +1,17 @@
-import React, {useState} from 'react';
+///// imports /////
+
+import {useState} from 'react';
 import Button from "../../buttons/button.jsx";
 
+///// main function /////
 function SpellComponent(props) {
+///// constants /////
     const [showMore, setShowMore] = useState(false);
     const apiData = props.data
 
+///// functions /////
+
+///// return /////
     return (
         <div className="featCard">
             <fieldset className="boxes">

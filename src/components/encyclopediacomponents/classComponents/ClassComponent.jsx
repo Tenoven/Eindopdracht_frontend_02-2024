@@ -1,22 +1,28 @@
+///// imports /////
+
 import "./ClassComponent.css";
-import React, {useContext, useState} from 'react';
+import {useContext, useState} from 'react';
 import ReactMarkdown from 'react-markdown';
 import Button from "../../buttons/button.jsx";
 import {AuthContext} from "../../../context/authContext/AuthContext.jsx";
 import {useNavigate} from "react-router-dom";
 
+///// main function /////
 function ClassComponent(props) {
+///// constants /////
     const [showMore, setShowMore] = useState(false);
     const apiData = props.data
     const button = props.button
     const {isAuthenticated} = useContext(AuthContext)
     const navigate = useNavigate()
 
+///// functions /////
     function setLocalStorage() {
         localStorage.setItem("class" , JSON.stringify(apiData.name))
         navigate("/charactercreator")
     }
 
+///// return /////
     return (
         <div className="classCard">
             {

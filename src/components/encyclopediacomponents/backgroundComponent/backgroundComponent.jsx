@@ -1,22 +1,28 @@
-import React, {useContext, useState} from 'react';
+///// imports /////
+import {useContext, useState} from 'react';
 import ReactMarkdown from "react-markdown";
 import "./backgroundComponent.css"
 import Button from "../../buttons/button.jsx";
 import {useNavigate} from "react-router-dom";
 import  {AuthContext} from "../../../context/authContext/AuthContext.jsx";
 
+///// main function /////
 function BackgroundComponent(props) {
 
+    ///// constants /////
     const [showMore, setShowMore] = useState(false);
     const apiData = props.data
     const button = props.button
     const navigate = useNavigate()
     const {isAuthenticated} = useContext(AuthContext)
 
+    ///// functions /////
     function setLocalStorage() {
         localStorage.setItem("background" , JSON.stringify(apiData.name))
         navigate("/charactercreator")
     }
+
+    ///// return /////
     return (
         <div className="backGroundCard">
             {button ? (

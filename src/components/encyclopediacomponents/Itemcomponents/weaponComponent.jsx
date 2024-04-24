@@ -1,11 +1,17 @@
+///// imports /////
 import {useState} from "react";
 import Button from "../../buttons/button.jsx";
 
+///// main function /////
 function WeaponComponent(props) {
 
+///// constants /////
     const [showMore, setShowMore] = useState(false);
     const apiData = props.data
 
+///// functions /////
+
+///// return /////
     return (
         <div className="weaponCard">
             <fieldset className="boxes">

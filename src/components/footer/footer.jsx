@@ -1,7 +1,13 @@
-import React from 'react';
+///// imports /////
 import "./footer.css"
 
-function Footer(props) {
+///// main function /////
+function Footer() {
+///// constants /////
+
+///// functions /////
+
+///// return /////
     return (
         <>
             <footer>
