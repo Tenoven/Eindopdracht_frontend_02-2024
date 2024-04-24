@@ -13,6 +13,7 @@ function LoginPage(props) {
         passWord: "",
     })
     const {loginRequest} = useContext(AuthContext)
+    const [error, setError] = useState(false)
 
     ///// functies /////
 
@@ -43,6 +44,7 @@ function LoginPage(props) {
 
         } catch (e) {
             console.error(e)
+            setError(true)
         }
     }
 
@@ -53,12 +55,13 @@ function LoginPage(props) {
                 <section className="loginForm">
                     <div>
                         <h1>Login</h1>
-                        <p>welcome! Please log in</p>
+                        <p>Welcome! Please log in</p>
                     </div>
+
 
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <label htmlFor="">username:</label>
+                            <label htmlFor="">Username:</label>
                             <input type="text" onChange={handleChange} name="userName"/>
                         </div>
 
@@ -66,8 +69,16 @@ function LoginPage(props) {
                             <label htmlFor="">Password:</label>
                             <input type="password" onChange={handleChange} name="passWord"/>
                         </div>
+
                         <Button type="submit" className="yellow" >Submit login</Button>
+
+                        {error && (
+                            <>
+                                <p className={"yellow"}>Login went wrong, please try again!</p>
+                            </>
+                        )}
                     </form>
+
                 </section>
             </BasicDragonBackground>
         </>
