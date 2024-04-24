@@ -1,12 +1,18 @@
+///// imports /////
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import EncyclopediaTile from "../../../components/encyclopediacomponents/encyclopediaComponent/encyclopediaTile.jsx";
 import magicItemIMG from "../../../assets/magic Item.png"
 import weaponIMG from "../../../assets/Weapons.png"
 import armorIMG from "../../../assets/Armor.png"
-
 import "./itemPage.css"
 
+///// main function /////
 function ItemPage() {
+///// constants /////
+
+///// functions /////
+
+///// return /////
     return (
         <>
             <BasicDragonBackground>

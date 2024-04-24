@@ -1,3 +1,4 @@
+///// imports /////
 import StatBlock from "../../../components/statBlock/statBlock.jsx";
 import "./CharacterSheet.css"
 import statTooModifier from "../../../../src/Helpers/statTooModifier.js";
@@ -10,20 +11,18 @@ import BackgroundComponent
 import ClassComponent from "../../../components/encyclopediacomponents/classComponents/ClassComponent.jsx";
 import RaceComponent from "../../../components/encyclopediacomponents/race component/RaceComponent.jsx";
 
-
+///// main function /////
 function CharacterSheet() {
+///// constants /////
     const token = localStorage.getItem("token")
     const decoded = jwtDecode(token)
     const username = decoded.sub
-    const [oldInfo, setOldInfo] = useState([])
     const formState= LocalToStateObject()
     const [backgroundData, setBackgroundData] = useState([]);
     const [apiClassData, setApiClassData] = useState([]);
     const [apiRaceData, setApiRaceData] = useState([]);
 
-    useEffect(() => {
-        void apiGetInfo()
-    }, []);
+///// functions /////
 
     useEffect(() => {
         void postToApi()
@@ -58,20 +57,6 @@ function CharacterSheet() {
         void apiGetInfo()
     }, [])
 
-    async function apiGetInfo() {
-        try {
-            const response = await axios.get(`https://api.datavortex.nl/fiveecenter/users/${username}`, {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                }
-            })
-            setOldInfo (JSON.parse(response.data.info) )
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    }
-
     async function postToApi() {
         try {
             const result = await axios.put(`https://api.datavortex.nl/fiveecenter/users/${username}`, {
@@ -88,6 +73,7 @@ function CharacterSheet() {
         }
     }
 
+///// return /////
     return (
 
             <div className="emptyBackground">

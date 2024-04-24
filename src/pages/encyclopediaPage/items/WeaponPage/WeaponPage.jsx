@@ -1,3 +1,4 @@
+///// imports /////
 import {useEffect, useState} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
@@ -7,7 +8,9 @@ import WeaponComponent from "../../../../components/encyclopediacomponents/Itemc
 import alphabetizeInverseArray from "../../../../Helpers/sorters/encyclopediaSorterAlphabetized.js";
 import sortBySource from "../../../../Helpers/sorters/SortBySource.js";
 
+///// main function /////
 function WeaponPage() {
+///// constants /////
     const [apiData, setApiData] = useState({})
     const [apiLink, setApiLink] = useState("https://api.open5e.com/v1/weapons/?format=json")
     const [inverseApiData, setInverseApiData] = useState([])
@@ -15,6 +18,7 @@ function WeaponPage() {
     const [sortStyle, setSortStyle] = useState("alphabetized")
 
 
+///// functions /////
     useEffect(() => {
         async function apiGetInfo() {
             try {
@@ -38,6 +42,7 @@ function WeaponPage() {
         setApiLink(apiData.previous)
     }
 
+///// return /////
     return (
         <BasicDragonBackground>
             <main>

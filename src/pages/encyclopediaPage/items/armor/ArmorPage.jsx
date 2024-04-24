@@ -1,13 +1,15 @@
+///// imports /////
 import {useEffect, useState} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import "./ArmorPage.css"
-import Button from "../../../../components/buttons/button.jsx";
 import ArmorComponent from "../../../../components/encyclopediacomponents/Itemcomponents/armorComponent.jsx";
 import sortBySource from "../../../../Helpers/sorters/SortBySource.js";
 import alphabetizeInverseArray from "../../../../Helpers/sorters/encyclopediaSorterAlphabetized.js";
 
+///// main function /////
 function ArmorPage() {
+///// constants /////
     const [apiData, setApiData] = useState({})
     const [apiLink, setApiLink] = useState("https://api.open5e.com/v1/armor/?format=json")
     const [inverseApiData, setInverseApiData] = useState([])
@@ -15,11 +17,11 @@ function ArmorPage() {
     const [sortStyle, setSortStyle] = useState("alphabetized")
 
 
+///// functions /////
     useEffect(() => {
         async function apiGetInfo() {
             try {
                 const response = await axios.get(apiLink);
-                // console.log("on mount:", response.data)
                 setApiData(response.data)
                 setInverseApiData(alphabetizeInverseArray(response.data.results))
                 setSortSource(sortBySource(response.data.results))
@@ -30,6 +32,7 @@ function ArmorPage() {
         void apiGetInfo()
     }, [apiLink])
 
+///// return /////
     return (
         <BasicDragonBackground>
             <main>

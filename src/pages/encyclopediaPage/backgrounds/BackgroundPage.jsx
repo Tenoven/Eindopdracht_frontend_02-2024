@@ -1,3 +1,4 @@
+///// imports /////
 import {useEffect, useState} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
@@ -7,13 +8,16 @@ import alphabetizeInverseArray from "../../../Helpers/sorters/encyclopediaSorter
 import sortBySource from "../../../Helpers/sorters/SortBySource.js";
 
 
+///// main function /////
 function BackgroundPage() {
+///// constants /////
 
     const [apiData, setApiData] = useState([]);
     const [inverseApiData, setInverseApiData] = useState([])
     const [sortSource, setSortSource] = useState([])
     const [sortStyle, setSortStyle] = useState("alphabetized")
 
+///// functions /////
     useEffect(() => {
         async function apiGetInfo() {
             try {
@@ -29,6 +33,7 @@ function BackgroundPage() {
         void apiGetInfo()
     }, [])
 
+///// return /////
     return (
         <BasicDragonBackground>
             <main >

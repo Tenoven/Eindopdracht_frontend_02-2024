@@ -1,3 +1,4 @@
+///// imports /////
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import "./registerPage.css"
 import Button from "../../components/buttons/button.jsx";
@@ -5,6 +6,7 @@ import {useState} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
+///// main function /////
 function RegisterPage() {
     ///// constants /////
     const [registerState , setRegisterState] = useState({
@@ -50,7 +52,7 @@ function RegisterPage() {
         }
         }
 
-
+///// return /////
     return (
         <>
             <BasicDragonBackground>

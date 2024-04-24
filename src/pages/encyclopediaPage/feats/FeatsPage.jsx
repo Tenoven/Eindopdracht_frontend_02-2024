@@ -1,3 +1,4 @@
+///// imports /////
 import {useEffect, useState} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
@@ -7,8 +8,10 @@ import Button from "../../../components/buttons/button.jsx";
 import alphabetizeInverseArray from "../../../Helpers/sorters/encyclopediaSorterAlphabetized.js";
 import sortBySource from "../../../Helpers/sorters/SortBySource.js";
 
+///// main function /////
 function FeatsPage() {
 
+///// constants /////
     const [apiData, setApiData] = useState({})
     const [apiLink, setApiLink] = useState("https://api.open5e.com/v1/feats/?format=json")
     const [inverseApiData, setInverseApiData] = useState([])
@@ -16,6 +19,7 @@ function FeatsPage() {
     const [sortStyle, setSortStyle] = useState("alphabetized")
 
 
+///// functions /////
     useEffect(() => {
         async function apiGetInfo() {
             try {
@@ -39,6 +43,7 @@ function FeatsPage() {
         setApiLink(apiData.previous)
     }
 
+///// return /////
     return (
         <BasicDragonBackground>
             <main className="featPage">

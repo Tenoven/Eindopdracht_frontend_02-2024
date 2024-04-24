@@ -1,3 +1,4 @@
+///// imports /////
 import {useEffect, useState} from 'react';
 import "./profilePage.css"
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
@@ -5,8 +6,9 @@ import axios from "axios";
 import {jwtDecode} from "jwt-decode";
 import {NavLink} from "react-router-dom";
 
+///// main function /////
 function ProfilePage() {
-
+///// constants /////
     const [userData, setUserData] = useState({})
     const [characterData, setCharacterData] = useState({})
     const token = localStorage.getItem("token")
@@ -14,6 +16,7 @@ function ProfilePage() {
     const username = decoded.sub
 
 
+///// functions /////
     useEffect(() => {
         async function apiGetInfo() {
             try {
@@ -33,7 +36,7 @@ function ProfilePage() {
     }, [])
 
 
-
+///// return /////
     return (
         <>
             <BasicDragonBackground>

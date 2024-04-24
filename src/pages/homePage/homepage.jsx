@@ -1,9 +1,15 @@
+///// import /////
 import "./homePage.css"
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
-import {statCalculator} from "../../Helpers/stat-roller/statDiceRoller.js";
 import {Link} from "react-router-dom";
 
+///// main function /////
 function HomePage() {
+    ///// constants /////
+
+    ///// functions /////
+
+    ///// return /////
     return (
         <>
             <BasicDragonBackground>

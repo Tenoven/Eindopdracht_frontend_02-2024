@@ -1,3 +1,4 @@
+///// imports /////
 import {useEffect, useState} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
@@ -5,16 +6,17 @@ import "./ClassesPage.css"
 import ClassComponent from "../../../components/encyclopediacomponents/classComponents/ClassComponent.jsx";
 import alphabetizeInverseArray from "../../../Helpers/sorters/encyclopediaSorterAlphabetized.js";
 import sortBySource from "../../../Helpers/sorters/SortBySource.js";
-import BackgroundComponent
-    from "../../../components/encyclopediacomponents/backgroundComponent/backgroundComponent.jsx";
 
+///// main function /////
 function ClassesPage() {
 
+///// constants /////
     const [apiClassData, setApiClassData] = useState([]);
     const [inverseApiData, setInverseApiData] = useState([])
     const [sortSource, setSortSource] = useState([])
     const [sortStyle, setSortStyle] = useState("alphabetized")
 
+///// functions /////
     useEffect(() => {
         async function apiGetClassInfo() {
             try {
@@ -28,6 +30,7 @@ function ClassesPage() {
         void apiGetClassInfo()
     }, [])
 
+///// return /////
     return (
         <BasicDragonBackground>
             <main >

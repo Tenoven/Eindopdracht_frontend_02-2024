@@ -1,3 +1,4 @@
+///// imports /////
 import {useContext, useState} from 'react';
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import "./loginPage.css"
@@ -5,7 +6,7 @@ import Button from "../../components/buttons/button.jsx";
 import axios from "axios";
 import {AuthContext} from "../../context/authContext/AuthContext.jsx";
 
-function LoginPage(props) {
+function LoginPage() {
 
     ///// variabelen /////
     const [loginState, setLoginState] = useState({
@@ -48,7 +49,7 @@ function LoginPage(props) {
         }
     }
 
-
+///// return /////
     return (
         <>
             <BasicDragonBackground>

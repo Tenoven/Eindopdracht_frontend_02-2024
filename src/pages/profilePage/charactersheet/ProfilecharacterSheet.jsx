@@ -1,3 +1,4 @@
+///// imports /////
 import StatBlock from "../../../components/statBlock/statBlock.jsx";
 import statTooModifier from "../../../../src/Helpers/statTooModifier.js";
 import { useEffect, useState } from "react";
@@ -8,8 +9,10 @@ import BackgroundComponent
     from "../../../components/encyclopediacomponents/backgroundComponent/backgroundComponent.jsx";
 import RaceComponent from "../../../components/encyclopediacomponents/race component/RaceComponent.jsx";
 
+///// main function /////
 function ProfileCharacterSheet() {
 
+///// constants /////
     const token = localStorage.getItem("token");
     const decoded = jwtDecode(token);
     const username = decoded.sub;
@@ -18,12 +21,13 @@ function ProfileCharacterSheet() {
     const [apiClassData, setApiClassData] = useState([]);
     const [apiRaceData, setApiRaceData] = useState([]);
 
-        useEffect(() => {
-            void apiGetRaceInfo()
-            void apiGetClassInfo()
-            void apiCharacterInfo()
-            void apiGetInfo();
-        }, [])
+///// functions /////
+    useEffect(() => {
+        void apiGetRaceInfo()
+        void apiGetClassInfo()
+        void apiCharacterInfo()
+        void apiGetInfo();
+    }, [])
 
     async function apiGetInfo() {
         try {
@@ -63,6 +67,7 @@ function ProfileCharacterSheet() {
         }
     }
 
+///// return /////
     return (
 
         <div className="emptyBackground">

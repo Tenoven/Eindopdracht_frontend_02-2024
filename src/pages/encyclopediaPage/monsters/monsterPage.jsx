@@ -1,3 +1,4 @@
+///// imports /////
 import {useEffect, useState} from 'react';
 import axios from "axios";
 import BasicDragonBackground from "../../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
@@ -7,8 +8,10 @@ import "./monsterPage.css"
 import alphabetizeInverseArray from "../../../Helpers/sorters/encyclopediaSorterAlphabetized.js";
 import sortBySource from "../../../Helpers/sorters/SortBySource.js";
 
+///// main function /////
 function MonsterPage() {
 
+///// constants /////
     const [apiData, setApiData] = useState([])
     const [apiLink, setApiLink] = useState("https://api.open5e.com/v1/monsters/?format=json")
     const [inverseApiData, setInverseApiData] = useState([])
@@ -17,6 +20,7 @@ function MonsterPage() {
 
 
 
+///// functions /////
     useEffect(() => {
         async function apiGetInfo() {
             try {
@@ -39,6 +43,7 @@ function MonsterPage() {
         setApiLink(apiData.previous)
     }
 
+///// return /////
     return (
         <BasicDragonBackground>
             <main>

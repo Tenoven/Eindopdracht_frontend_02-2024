@@ -1,3 +1,4 @@
+///// imports /////
 import './App.css'
 import Header from "./components/header/header.jsx";
 import Footer from "./components/footer/footer.jsx";
@@ -25,9 +26,14 @@ import {AuthContext} from "./context/authContext/AuthContext.jsx";
 import {useContext} from "react";
 
 
+///// main function /////
 function App() {
+///// constants /////
     const {isAuthenticated} = useContext(AuthContext);
 
+///// functions /////
+
+///// return /////
   return (
     <>
         <Header></Header>

@@ -1,9 +1,15 @@
+///// imports /////
 import "./ErrorPage.css"
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 import {NavLink} from "react-router-dom";
 
+///// main function /////
 function ErrorPage() {
+///// constants /////
 
+///// functions /////
+
+///// return /////
     return (
         <>
             <BasicDragonBackground>

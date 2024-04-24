@@ -1,3 +1,4 @@
+///// imports /////
 import "./encyclopediaPage.css"
 import EncyclopediaTile from "../../components/encyclopediacomponents/encyclopediaComponent/encyclopediaTile.jsx";
 import raceimg from "../../assets/Races.png"
@@ -9,7 +10,13 @@ import spellsimg from "../../assets/spells.png"
 import monsterimg from "../../assets/monsters.png"
 import BasicDragonBackground from "../../components/backgrounds/basicDragon/basicDragonBackground.jsx";
 
+///// main function /////
 function EncyclopediaPage() {
+///// constants /////
+
+///// functions /////
+
+///// return /////
     return (
         <>
             <BasicDragonBackground>
